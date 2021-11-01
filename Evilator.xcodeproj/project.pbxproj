@@ -11,6 +11,9 @@
 		83D5BA1627301743009F4C07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA1527301743009F4C07 /* ContentView.swift */; };
 		83D5BA1827301744009F4C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D5BA1727301744009F4C07 /* Assets.xcassets */; };
 		83D5BA1B27301744009F4C07 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D5BA1A27301744009F4C07 /* Preview Assets.xcassets */; };
+		83D5BA22273017A5009F4C07 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 83D5BA21273017A5009F4C07 /* README.md */; };
+		83D5BA242730185E009F4C07 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 83D5BA232730185E009F4C07 /* .gitignore */; };
+		83D5BA2627301872009F4C07 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA2527301872009F4C07 /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		83D5BA1527301743009F4C07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		83D5BA1727301744009F4C07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83D5BA1A27301744009F4C07 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		83D5BA21273017A5009F4C07 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		83D5BA232730185E009F4C07 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		83D5BA2527301872009F4C07 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,8 @@
 		83D5BA0727301743009F4C07 = {
 			isa = PBXGroup;
 			children = (
+				83D5BA21273017A5009F4C07 /* README.md */,
+				83D5BA232730185E009F4C07 /* .gitignore */,
 				83D5BA1227301743009F4C07 /* Evilator */,
 				83D5BA1127301743009F4C07 /* Products */,
 			);
@@ -53,6 +61,7 @@
 			children = (
 				83D5BA1327301743009F4C07 /* EvilatorApp.swift */,
 				83D5BA1527301743009F4C07 /* ContentView.swift */,
+				83D5BA2527301872009F4C07 /* Calculator.swift */,
 				83D5BA1727301744009F4C07 /* Assets.xcassets */,
 				83D5BA1927301744009F4C07 /* Preview Content */,
 			);
@@ -125,6 +134,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D5BA242730185E009F4C07 /* .gitignore in Resources */,
+				83D5BA22273017A5009F4C07 /* README.md in Resources */,
 				83D5BA1B27301744009F4C07 /* Preview Assets.xcassets in Resources */,
 				83D5BA1827301744009F4C07 /* Assets.xcassets in Resources */,
 			);
@@ -139,6 +150,7 @@
 			files = (
 				83D5BA1627301743009F4C07 /* ContentView.swift in Sources */,
 				83D5BA1427301743009F4C07 /* EvilatorApp.swift in Sources */,
+				83D5BA2627301872009F4C07 /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
