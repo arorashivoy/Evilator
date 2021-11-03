@@ -32,6 +32,24 @@ struct SetButton: ButtonStyle {
     }
 }
 
+struct OpsButton: ButtonStyle {
+    var wasPressed: Bool
+    
+    func makeBody(configuration: Configuration) -> some View {
+        ZStack{
+            Circle()
+                .foregroundColor(wasPressed ? .white : .orange)
+                .frame(width: 70, height: 70)
+            configuration.label
+                .font(.title.bold())
+                .foregroundColor(wasPressed ? .orange : .white)
+                .padding()
+                .padding([.leading, .trailing], 5)
+        }
+        .padding(10)
+    }
+}
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

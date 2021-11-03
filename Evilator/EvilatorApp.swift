@@ -17,6 +17,7 @@ struct EvilatorApp: App {
     }
 }
 
+/// For adding accessible font color
 extension Color {
     // MARK: - font colors
     /// This color is either black or white, whichever is more accessible when viewed against the background color.

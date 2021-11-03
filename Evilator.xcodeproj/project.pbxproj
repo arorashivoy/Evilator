@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83B872862732CB64008A8FF9 /* CalDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B872852732CB64008A8FF9 /* CalDisplay.swift */; };
 		83D5BA1427301743009F4C07 /* EvilatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA1327301743009F4C07 /* EvilatorApp.swift */; };
 		83D5BA1627301743009F4C07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA1527301743009F4C07 /* ContentView.swift */; };
 		83D5BA1827301744009F4C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D5BA1727301744009F4C07 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		83B872852732CB64008A8FF9 /* CalDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalDisplay.swift; sourceTree = "<group>"; };
 		83D5BA1027301743009F4C07 /* Evilator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evilator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D5BA1327301743009F4C07 /* EvilatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvilatorApp.swift; sourceTree = "<group>"; };
 		83D5BA1527301743009F4C07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83B872882732CEBF008A8FF9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				83B872852732CB64008A8FF9 /* CalDisplay.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		83D5BA0727301743009F4C07 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +72,7 @@
 				83D5BA1327301743009F4C07 /* EvilatorApp.swift */,
 				83D5BA1527301743009F4C07 /* ContentView.swift */,
 				83D5BA2527301872009F4C07 /* Calculator.swift */,
+				83B872882732CEBF008A8FF9 /* Helper */,
 				83D5BA1727301744009F4C07 /* Assets.xcassets */,
 				83D5BA1927301744009F4C07 /* Preview Content */,
 			);
@@ -149,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83D5BA1627301743009F4C07 /* ContentView.swift in Sources */,
+				83B872862732CB64008A8FF9 /* CalDisplay.swift in Sources */,
 				83D5BA1427301743009F4C07 /* EvilatorApp.swift in Sources */,
 				83D5BA2627301872009F4C07 /* Calculator.swift in Sources */,
 			);
@@ -287,8 +299,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,8 +330,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
