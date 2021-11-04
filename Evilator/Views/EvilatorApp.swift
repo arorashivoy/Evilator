@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+//TODO: change ad app it to evilator's from admod
 
 @main
 struct EvilatorApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

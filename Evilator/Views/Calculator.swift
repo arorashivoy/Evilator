@@ -12,6 +12,7 @@ struct Calculator: View {
     @State private var number: Decimal = 0
     @State private var ops: Ops = .none
     @State private var equalPressed: Bool = false
+    @State private var numLimit: Bool = false
     @State private var showNumber: String = "0"
     @State private var equation: String = ""
     @State private var decimal: Decimal = 0
@@ -22,26 +23,46 @@ struct Calculator: View {
             Spacer()
             
             /// Display
-            CalDisplay(equation: $equation, showNumber: $showNumber)
+            CalDisplay(equation: $equation, showNumber: $showNumber, numLimit: $numLimit)
             
             /// Row 1
             HStack{
                 /// Clear
-                Button("C"){
+                Button{
                     number = 0
                     equation = ""
                     showNumber = "0"
                     decimal = 0
                     ops = .none
 
+                }label: {
+                    ZStack{
+                        Circle()
+                            .foregroundColor(.gray)
+                            .frame(width: 70, height: 70)
+                        Text("AC")
+                            .font(.title)
+                            .foregroundColor(.gray.accessibleFontColor)
+                            .padding()
+                            .padding([.leading, .trailing], 5)
+                    }
                 }
-                .buttonStyle(SetButton(bgColor: .gray))
 
                 /// Link
-                Button(""){
+                Button{
                     print("")
+                }label: {
+                    ZStack{
+                        Circle()
+                            .foregroundColor(.gray)
+                            .frame(width: 70, height: 70)
+                        Text("Ad")
+                            .font(.title)
+                            .foregroundColor(.gray.accessibleFontColor)
+                            .padding()
+                            .padding([.leading, .trailing])
+                    }
                 }
-                .buttonStyle(SetButton(bgColor: .gray))
 
                 Button("%"){
                     print("%")
@@ -183,24 +204,19 @@ struct Calculator: View {
     /// - Parameter num: the digit pressed
     func numPressed(num: Decimal) {
         if (showNumber.count < 11 || number.isZero) {
-//        if  {
             if decimal != 0 {
                 number += num * decimal
                 decimal /= 10
                 showNumber = number.description
                 
             }else {
-//                if number == 0 {
-//                    showNumber = "\(num.description)"
-//                }else {
-//                    showNumber += "\(num.description)"
-//                }
                 number = (number * 10) + num
                 showNumber = number.description
                 
             }
         }else {
             print("Show vibration")
+            numLimit = true
         }
         
         /// To remove equation when number is typed after equal
@@ -244,16 +260,16 @@ struct Calculator: View {
         number = 0
         decimal = 0
     }
-}
-
-/// enum of all the operations
-enum Ops: String {
-    case none = ""
-    case divide = "÷"
-    case multiply = "x"
-    case subtract = "-"
-    case add = "+"
-    case equal = "="
+    
+    /// enum of all the operations
+    enum Ops: String {
+        case none = ""
+        case divide = "÷"
+        case multiply = "x"
+        case subtract = "-"
+        case add = "+"
+        case equal = "="
+    }
 }
 
 struct Calculator_Previews: PreviewProvider {
