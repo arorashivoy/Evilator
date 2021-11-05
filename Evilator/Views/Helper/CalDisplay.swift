@@ -8,23 +8,29 @@
 import SwiftUI
 
 struct CalDisplay: View {
+    @State private var xOffset: CGFloat = 0
     @Binding var equation: String
     @Binding var showNumber: String
     @Binding var numLimit: Bool
-    @State private var xOffset: CGFloat = 0
+    
+    // Evil Functions
+    @Binding var flippedAns: Bool
     
     var body: some View {
         VStack(alignment: .trailing){
-            /// Equation
+            // Equation
             Text(equation)
                 .padding(.trailing)
                 .padding(.trailing, 7)
             
-            /// Answer
+            // Answer
             Text(showNumber)
                 .font(.system(size: 90))
                 .minimumScaleFactor(0.5)
                 .padding()
+            /// Rotating for evil func
+                .rotationEffect(flippedAns ? Angle(degrees: 180) : Angle(degrees: 0))
+            /// vibrations when number reaches the limit of 11
                 .offset(x: xOffset, y: 0)
                 .onChange(of: numLimit) { newValue in
                     if numLimit {
@@ -60,7 +66,7 @@ struct CalDisplay: View {
 
 struct CalDisplay_Previews: PreviewProvider {
     static var previews: some View {
-        CalDisplay(equation: .constant(""), showNumber: .constant("0"), numLimit: .constant(false))
+        CalDisplay(equation: .constant(""), showNumber: .constant("0"), numLimit: .constant(false), flippedAns: .constant(false))
             .preferredColorScheme(.dark)
     }
 }

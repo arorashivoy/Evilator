@@ -5,6 +5,8 @@
 //  Created by Shivoy Arora on 04/11/21.
 //
 
+// Intertitial ad object and view controller
+
 import SwiftUI
 import UIKit
 import GoogleMobileAds
@@ -44,7 +46,6 @@ final class InterstitialAdView: NSObject, UIViewControllerRepresentable, GADFull
         let view = UIViewController()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1)) {
-//            self.showAd(from: view)
             self.showAd(from: view)
         }
         

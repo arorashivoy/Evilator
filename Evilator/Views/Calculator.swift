@@ -17,17 +17,32 @@ struct Calculator: View {
     @State private var equation: String = ""
     @State private var decimal: Decimal = 0
     
+    @State private var showInterstitialAd: Bool = false
+    
+    // For Evil functions
+    @State private var flippedAns: Bool = false
+    
     var body: some View {
         VStack(alignment: .trailing){
             
+            //TODO: uncomment ad
+            // Banner Ad
+            /// different adunit id for test and final release
+            #if DEBUG
+            SwiftUIBannerAD(adUnitId: AdIds.testBanner.rawValue)
+            #else
+            SwiftUIBannerAD(adUnitId: AdIds.Banner.rawValue)
+            #endif
+            
+            
             Spacer()
             
-            /// Display
-            CalDisplay(equation: $equation, showNumber: $showNumber, numLimit: $numLimit)
+            // Display
+            CalDisplay(equation: $equation, showNumber: $showNumber, numLimit: $numLimit, flippedAns: $flippedAns)
             
-            /// Row 1
+            // Row 1
             HStack{
-                /// Clear
+                // Clear
                 Button{
                     number = 0
                     equation = ""
@@ -48,9 +63,10 @@ struct Calculator: View {
                     }
                 }
 
-                /// Link
+                // Ad Button
                 Button{
-                    print("")
+                    print("Showing Ad")
+                    showInterstitialAd.toggle()
                 }label: {
                     ZStack{
                         Circle()
@@ -76,7 +92,7 @@ struct Calculator: View {
 
             }
 
-            /// Row 2
+            // Row 2
             HStack{
                 Button("7"){
                     numPressed(num: 7.0)
@@ -100,7 +116,7 @@ struct Calculator: View {
 
             }
 
-            /// Row 3
+            // Row 3
             HStack{
                 Button("4"){
                     numPressed(num: 4.0)
@@ -124,7 +140,7 @@ struct Calculator: View {
 
             }
 
-            /// Row 4
+            // Row 4
             HStack{
                 Button("1"){
                     numPressed(num: 1.0)
@@ -148,9 +164,9 @@ struct Calculator: View {
 
             }
 
-            /// Row 5
+            // Row 5
             HStack{
-                /// 0 Button
+                // 0 Button
                 Button{
                     numPressed(num: 0)
                 }label: {
@@ -167,7 +183,7 @@ struct Calculator: View {
                 }
                 .padding()
 
-                /// . button
+                // . button
                 Button("."){
                     if decimal == 0{
                         if number != 0 {
@@ -180,7 +196,7 @@ struct Calculator: View {
                 }
                 .buttonStyle(SetButton(bgColor: .gray.opacity(0.4)))
 
-                /// = button
+                // = button
                 Button("="){
                     opsPressed(ops: .equal)
                     withAnimation {
@@ -197,12 +213,24 @@ struct Calculator: View {
                 }
             }
         }
+        
+        //TODO: uncomment ad
+        // Presention interstitial ad
+        /// Different ad unit id for test and final release
+        #if DEBUG
+        .presentInterstitialAd(isPresented: $showInterstitialAd, adUnitId: AdIds.testInterstitial.rawValue)
+        #else
+        .presentInterstitialAd(isPresented: $showInterstitialAd, adUnitId: AdIds.Interstitial.rawValue)
+        #endif
     }
     
     
     /// to show the digit pressed
     /// - Parameter num: the digit pressed
     func numPressed(num: Decimal) {
+        /// Unflipping the showNumber when a new number is pressed
+        flippedAns = false
+        
         if (showNumber.count < 11 || number.isZero) {
             if decimal != 0 {
                 number += num * decimal
@@ -254,22 +282,30 @@ struct Calculator: View {
         }
         
         withAnimation {
-            self.ops = ops
+            showNumber = prevNumber.description
         }
-        showNumber = prevNumber.description
+        
+        // Evil Functions
+        DispatchQueue.main.async {
+            EvilFunctions(ops: $ops, flippedAns: $flippedAns, showNumber: $showNumber, showInterstitialAd: $showInterstitialAd, currOps: ops).evilOps()
+        }
+        
         number = 0
         decimal = 0
+        DispatchQueue.main.async {
+            self.ops = ops
+        }
     }
-    
-    /// enum of all the operations
-    enum Ops: String {
-        case none = ""
-        case divide = "÷"
-        case multiply = "x"
-        case subtract = "-"
-        case add = "+"
-        case equal = "="
-    }
+}
+
+/// enum of all the operations
+enum Ops: String, CaseIterable {
+    case none = ""
+    case divide = "÷"
+    case multiply = "x"
+    case subtract = "-"
+    case add = "+"
+    case equal = "="
 }
 
 struct Calculator_Previews: PreviewProvider {

@@ -20,6 +20,17 @@ struct EvilatorApp: App {
     }
 }
 
+/// Extension for foreground notification
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    /// foreground notification
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        /// To tell the app that we have finished processing
+        completionHandler([.banner, .sound])
+    }
+}
+
 /// For adding accessible font color
 extension Color {
     // MARK: - font colors

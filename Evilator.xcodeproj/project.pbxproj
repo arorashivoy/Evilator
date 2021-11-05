@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8304D7C62735392100D98795 /* EvilFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8304D7C52735392100D98795 /* EvilFunctions.swift */; };
 		832BD32B2734117000D81DE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD32A2734117000D81DE0 /* AppDelegate.swift */; };
 		832BD333273436DA00D81DE0 /* InterstitialAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD332273436DA00D81DE0 /* InterstitialAd.swift */; };
+		832BD33627345F3100D81DE0 /* FullScreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD33527345F3100D81DE0 /* FullScreenModifier.swift */; };
+		832BD33A27347E6600D81DE0 /* AdIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD33927347E6600D81DE0 /* AdIds.swift */; };
+		832BD33C2734834100D81DE0 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD33B2734834100D81DE0 /* BannerAd.swift */; };
 		83B872862732CB64008A8FF9 /* CalDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B872852732CB64008A8FF9 /* CalDisplay.swift */; };
 		83D5BA1427301743009F4C07 /* EvilatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA1327301743009F4C07 /* EvilatorApp.swift */; };
 		83D5BA1627301743009F4C07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA1527301743009F4C07 /* ContentView.swift */; };
@@ -17,13 +21,18 @@
 		83D5BA22273017A5009F4C07 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 83D5BA21273017A5009F4C07 /* README.md */; };
 		83D5BA242730185E009F4C07 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 83D5BA232730185E009F4C07 /* .gitignore */; };
 		83D5BA2627301872009F4C07 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA2527301872009F4C07 /* Calculator.swift */; };
+		83FF3FC9273558B000A705E7 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FF3FC8273558B000A705E7 /* AppNotification.swift */; };
 		A480442A0773C69895DAF08E /* Pods_Evilator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E333F7ABCAAB0BAF3C176A71 /* Pods_Evilator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B82B1E99AF7AFA5071B9D26 /* Pods-Evilator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evilator.debug.xcconfig"; path = "Target Support Files/Pods-Evilator/Pods-Evilator.debug.xcconfig"; sourceTree = "<group>"; };
+		8304D7C52735392100D98795 /* EvilFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvilFunctions.swift; sourceTree = "<group>"; };
 		832BD32A2734117000D81DE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		832BD332273436DA00D81DE0 /* InterstitialAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAd.swift; sourceTree = "<group>"; };
+		832BD33527345F3100D81DE0 /* FullScreenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenModifier.swift; sourceTree = "<group>"; };
+		832BD33927347E6600D81DE0 /* AdIds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdIds.swift; sourceTree = "<group>"; };
+		832BD33B2734834100D81DE0 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		835566CA27340897009666B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		83B872852732CB64008A8FF9 /* CalDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalDisplay.swift; sourceTree = "<group>"; };
 		83D5BA1027301743009F4C07 /* Evilator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evilator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +43,7 @@
 		83D5BA21273017A5009F4C07 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		83D5BA232730185E009F4C07 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		83D5BA2527301872009F4C07 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		83FF3FC8273558B000A705E7 /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotification.swift; sourceTree = "<group>"; };
 		A8CC36ACE32C273E4B9C0EBC /* Pods-Evilator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evilator.release.xcconfig"; path = "Target Support Files/Pods-Evilator/Pods-Evilator.release.xcconfig"; sourceTree = "<group>"; };
 		E333F7ABCAAB0BAF3C176A71 /* Pods_Evilator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Evilator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -79,18 +89,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		832BD334273436E200D81DE0 /* Modal */ = {
+		832BD334273436E200D81DE0 /* Admod */ = {
 			isa = PBXGroup;
 			children = (
+				832BD33B2734834100D81DE0 /* BannerAd.swift */,
 				832BD332273436DA00D81DE0 /* InterstitialAd.swift */,
+				832BD33527345F3100D81DE0 /* FullScreenModifier.swift */,
+				832BD33927347E6600D81DE0 /* AdIds.swift */,
 			);
-			path = Modal;
+			path = Admod;
 			sourceTree = "<group>";
 		};
 		83B872882732CEBF008A8FF9 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				83B872852732CB64008A8FF9 /* CalDisplay.swift */,
+				8304D7C52735392100D98795 /* EvilFunctions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -119,7 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				832BD32F27342F4B00D81DE0 /* Views */,
-				832BD334273436E200D81DE0 /* Modal */,
+				832BD334273436E200D81DE0 /* Admod */,
+				83FF3FCA273558B600A705E7 /* Modal */,
 				835566CA27340897009666B8 /* Info.plist */,
 				83D5BA1727301744009F4C07 /* Assets.xcassets */,
 				83D5BA1927301744009F4C07 /* Preview Content */,
@@ -133,6 +148,14 @@
 				83D5BA1A27301744009F4C07 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		83FF3FCA273558B600A705E7 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				83FF3FC8273558B000A705E7 /* AppNotification.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +277,12 @@
 				83D5BA1627301743009F4C07 /* ContentView.swift in Sources */,
 				83B872862732CB64008A8FF9 /* CalDisplay.swift in Sources */,
 				83D5BA1427301743009F4C07 /* EvilatorApp.swift in Sources */,
+				832BD33A27347E6600D81DE0 /* AdIds.swift in Sources */,
+				83FF3FC9273558B000A705E7 /* AppNotification.swift in Sources */,
+				832BD33C2734834100D81DE0 /* BannerAd.swift in Sources */,
 				832BD32B2734117000D81DE0 /* AppDelegate.swift in Sources */,
+				832BD33627345F3100D81DE0 /* FullScreenModifier.swift in Sources */,
+				8304D7C62735392100D98795 /* EvilFunctions.swift in Sources */,
 				832BD333273436DA00D81DE0 /* InterstitialAd.swift in Sources */,
 				83D5BA2627301872009F4C07 /* Calculator.swift in Sources */,
 			);
