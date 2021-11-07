@@ -13,7 +13,7 @@
 		832BD33627345F3100D81DE0 /* FullScreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD33527345F3100D81DE0 /* FullScreenModifier.swift */; };
 		832BD33C2734834100D81DE0 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD33B2734834100D81DE0 /* BannerAd.swift */; };
 		83B5D94D273800D600B4D4B8 /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B5D94C273800D500B4D4B8 /* SettingsPage.swift */; };
-		83B5D94F273806A800B4D4B8 /* AdIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B5D94E273806A800B4D4B8 /* AdIds.swift */; };
+		83B5D9512738292500B4D4B8 /* AdIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B5D9502738292500B4D4B8 /* AdIds.swift */; };
 		83B872862732CB64008A8FF9 /* CalDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B872852732CB64008A8FF9 /* CalDisplay.swift */; };
 		83D5BA1427301743009F4C07 /* EvilatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA1327301743009F4C07 /* EvilatorApp.swift */; };
 		83D5BA1627301743009F4C07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA1527301743009F4C07 /* ContentView.swift */; };
@@ -35,7 +35,7 @@
 		832BD33B2734834100D81DE0 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		835566CA27340897009666B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		83B5D94C273800D500B4D4B8 /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
-		83B5D94E273806A800B4D4B8 /* AdIds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdIds.swift; sourceTree = "<group>"; };
+		83B5D9502738292500B4D4B8 /* AdIds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdIds.swift; sourceTree = "<group>"; };
 		83B872852732CB64008A8FF9 /* CalDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalDisplay.swift; sourceTree = "<group>"; };
 		83D5BA1027301743009F4C07 /* Evilator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evilator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D5BA1327301743009F4C07 /* EvilatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvilatorApp.swift; sourceTree = "<group>"; };
@@ -95,10 +95,10 @@
 		832BD334273436E200D81DE0 /* Admob */ = {
 			isa = PBXGroup;
 			children = (
+				83B5D9502738292500B4D4B8 /* AdIds.swift */,
 				832BD33B2734834100D81DE0 /* BannerAd.swift */,
 				832BD332273436DA00D81DE0 /* InterstitialAd.swift */,
 				832BD33527345F3100D81DE0 /* FullScreenModifier.swift */,
-				83B5D94E273806A800B4D4B8 /* AdIds.swift */,
 			);
 			path = Admob;
 			sourceTree = "<group>";
@@ -280,7 +280,7 @@
 				83D5BA1627301743009F4C07 /* ContentView.swift in Sources */,
 				83B872862732CB64008A8FF9 /* CalDisplay.swift in Sources */,
 				83D5BA1427301743009F4C07 /* EvilatorApp.swift in Sources */,
-				83B5D94F273806A800B4D4B8 /* AdIds.swift in Sources */,
+				83B5D9512738292500B4D4B8 /* AdIds.swift in Sources */,
 				83B5D94D273800D600B4D4B8 /* SettingsPage.swift in Sources */,
 				83FF3FC9273558B000A705E7 /* AppNotification.swift in Sources */,
 				832BD33C2734834100D81DE0 /* BannerAd.swift in Sources */,
