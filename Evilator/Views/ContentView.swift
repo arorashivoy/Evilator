@@ -14,6 +14,8 @@ struct ContentView: View {
     }
 }
 
+/// Custom button style
+/// For setting a circle with background color and set apt text according to that
 struct SetButton: ButtonStyle {
     var bgColor: Color
     
@@ -32,6 +34,7 @@ struct SetButton: ButtonStyle {
     }
 }
 
+/// Custom button style for operations button
 struct OpsButton: ButtonStyle {
     var wasPressed: Bool
     

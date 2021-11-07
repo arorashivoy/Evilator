@@ -92,7 +92,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		832BD334273436E200D81DE0 /* Admod */ = {
+		832BD334273436E200D81DE0 /* Admob */ = {
 			isa = PBXGroup;
 			children = (
 				832BD33B2734834100D81DE0 /* BannerAd.swift */,
@@ -100,7 +100,7 @@
 				832BD33527345F3100D81DE0 /* FullScreenModifier.swift */,
 				83B5D94E273806A800B4D4B8 /* AdIds.swift */,
 			);
-			path = Admod;
+			path = Admob;
 			sourceTree = "<group>";
 		};
 		83B872882732CEBF008A8FF9 /* Helper */ = {
@@ -136,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				832BD32F27342F4B00D81DE0 /* Views */,
-				832BD334273436E200D81DE0 /* Admod */,
+				832BD334273436E200D81DE0 /* Admob */,
 				83FF3FCA273558B600A705E7 /* Modal */,
 				835566CA27340897009666B8 /* Info.plist */,
 				83D5BA1727301744009F4C07 /* Assets.xcassets */,
