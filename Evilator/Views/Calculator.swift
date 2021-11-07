@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Calculator: View {
+    @AppStorage("removeAd") var removeAd: Bool = false
     @State private var prevNumber: Decimal = 0
     @State private var number: Decimal = 0
     @State private var ops: Ops = .none
@@ -21,24 +22,27 @@ struct Calculator: View {
     
     // For Evil functions
     @State private var flippedAns: Bool = false
+    @State private var only69: Bool = false
+    @State private var bannerBlock: Bool = false
     
     var body: some View {
         VStack(alignment: .trailing){
             
-            //TODO: uncomment ad
-            // Banner Ad
-            /// different adunit id for test and final release
-            #if DEBUG
-            SwiftUIBannerAD(adUnitId: AdIds.testBanner.rawValue)
-            #else
-            SwiftUIBannerAD(adUnitId: AdIds.Banner.rawValue)
-            #endif
+            if !removeAd {
+                // Banner Ad
+                /// different adunit id for test and final release
+                #if DEBUG
+                SwiftUIBannerAD(adUnitId: AdIds.testBanner.rawValue)
+                #else
+                SwiftUIBannerAD(adUnitId: AdIds.Banner.rawValue)
+                #endif
+            }
             
             
             Spacer()
             
             // Display
-            CalDisplay(equation: $equation, showNumber: $showNumber, numLimit: $numLimit, flippedAns: $flippedAns)
+            CalDisplay(equation: $equation, showNumber: $showNumber, numLimit: $numLimit, flippedAns: $flippedAns, bannerBlock: $bannerBlock)
             
             // Row 1
             HStack{
@@ -49,6 +53,7 @@ struct Calculator: View {
                     showNumber = "0"
                     decimal = 0
                     ops = .none
+                    flippedAns = false
 
                 }label: {
                     ZStack{
@@ -235,13 +240,18 @@ struct Calculator: View {
             if decimal != 0 {
                 number += num * decimal
                 decimal /= 10
-                showNumber = number.description
                 
             }else {
                 number = (number * 10) + num
-                showNumber = number.description
                 
             }
+            showNumber = number.description
+            
+            // Evil functions
+            DispatchQueue.main.async {
+                EvilFunctions(ops: .constant(.none), flippedAns: .constant(false), showNumber: $showNumber, showInterstitialAd: .constant(false), only69: $only69, bannerBlock: .constant(false), currOps: .none).evilNum()
+            }
+            
         }else {
             print("Show vibration")
             numLimit = true
@@ -257,6 +267,8 @@ struct Calculator: View {
     /// To get the result when an operation is pressed
     /// - Parameter ops: the operation pressed
     func opsPressed(ops: Ops) {
+        
+        only69 = false
         
         switch self.ops {
         case .add:
@@ -284,16 +296,13 @@ struct Calculator: View {
         withAnimation {
             showNumber = prevNumber.description
         }
+        number = 0
+        decimal = 0
+        self.ops = ops
         
         // Evil Functions
         DispatchQueue.main.async {
-            EvilFunctions(ops: $ops, flippedAns: $flippedAns, showNumber: $showNumber, showInterstitialAd: $showInterstitialAd, currOps: ops).evilOps()
-        }
-        
-        number = 0
-        decimal = 0
-        DispatchQueue.main.async {
-            self.ops = ops
+            EvilFunctions(ops: $ops, flippedAns: $flippedAns, showNumber: $showNumber, showInterstitialAd: $showInterstitialAd, only69: $only69, bannerBlock: $bannerBlock, currOps: ops).evilOps()
         }
     }
 }

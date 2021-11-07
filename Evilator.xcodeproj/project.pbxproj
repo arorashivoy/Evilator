@@ -13,6 +13,7 @@
 		832BD33627345F3100D81DE0 /* FullScreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD33527345F3100D81DE0 /* FullScreenModifier.swift */; };
 		832BD33A27347E6600D81DE0 /* AdIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD33927347E6600D81DE0 /* AdIds.swift */; };
 		832BD33C2734834100D81DE0 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD33B2734834100D81DE0 /* BannerAd.swift */; };
+		83B5D94D273800D600B4D4B8 /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B5D94C273800D500B4D4B8 /* SettingsPage.swift */; };
 		83B872862732CB64008A8FF9 /* CalDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B872852732CB64008A8FF9 /* CalDisplay.swift */; };
 		83D5BA1427301743009F4C07 /* EvilatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA1327301743009F4C07 /* EvilatorApp.swift */; };
 		83D5BA1627301743009F4C07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA1527301743009F4C07 /* ContentView.swift */; };
@@ -34,6 +35,7 @@
 		832BD33927347E6600D81DE0 /* AdIds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdIds.swift; sourceTree = "<group>"; };
 		832BD33B2734834100D81DE0 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		835566CA27340897009666B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		83B5D94C273800D500B4D4B8 /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 		83B872852732CB64008A8FF9 /* CalDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalDisplay.swift; sourceTree = "<group>"; };
 		83D5BA1027301743009F4C07 /* Evilator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evilator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D5BA1327301743009F4C07 /* EvilatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvilatorApp.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				832BD32A2734117000D81DE0 /* AppDelegate.swift */,
 				83D5BA1527301743009F4C07 /* ContentView.swift */,
 				83D5BA2527301872009F4C07 /* Calculator.swift */,
+				83B5D94C273800D500B4D4B8 /* SettingsPage.swift */,
 				83B872882732CEBF008A8FF9 /* Helper */,
 			);
 			path = Views;
@@ -277,6 +280,7 @@
 				83D5BA1627301743009F4C07 /* ContentView.swift in Sources */,
 				83B872862732CB64008A8FF9 /* CalDisplay.swift in Sources */,
 				83D5BA1427301743009F4C07 /* EvilatorApp.swift in Sources */,
+				83B5D94D273800D600B4D4B8 /* SettingsPage.swift in Sources */,
 				832BD33A27347E6600D81DE0 /* AdIds.swift in Sources */,
 				83FF3FC9273558B000A705E7 /* AppNotification.swift in Sources */,
 				832BD33C2734834100D81DE0 /* BannerAd.swift in Sources */,
@@ -342,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -397,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -426,7 +430,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,7 +463,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
