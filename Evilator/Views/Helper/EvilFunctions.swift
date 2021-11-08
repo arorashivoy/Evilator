@@ -25,48 +25,48 @@ struct EvilFunctions {
     /// Setting up evil functions when an ops is pressed
     func evilOps() {
         
-        // Ans is 69
-        if showNumber == "69" {
-            showNumber = "NICE"
-        }
-        // Ans is 420
-        else if showNumber == "420"{
-            print("Snoop Dogg")
-        }
-        // making 69 (30) and ans is near 69
-        else if 66...71 ~= Int(showNumber) ?? 0 && 1...30 ~= random {
-            showNumber = "69"
-        }
-        // Changing ops (5)
-        else if 1...5 ~= random {
-            let ranOps: Ops = .allCases.randomElement() ?? ops
-            ops = ranOps
-        }
-        // flipping the answer (10)
-        else if 6...15 ~= random {
-            flippedAns = true
-        }
+//        // Ans is 69
+//        if showNumber == "69" {
+//            showNumber = "NICE"
+//        }
+//        // Ans is 420
+//        else if showNumber == "420"{
+//            print("Snoop Dogg")
+//        }
+//        // making 69 (30) and ans is near 69
+//        else if 66...71 ~= Int(showNumber) ?? 0 && 1...30 ~= random {
+//            showNumber = "69"
+//        }
+//        // Changing ops (5)
+//        else if 1...5 ~= random {
+//            let ranOps: Ops = .allCases.randomElement() ?? ops
+//            ops = ranOps
+//        }
+//        // flipping the answer (10)
+//        else if 6...15 ~= random {
+//            flippedAns = true
+//        }
         // rickroll (10) and equal is pressed
-        else if 16...25 ~= random && currOps == .equal {
+        if 1...100 ~= random && currOps == .equal {
             openURL(URL(string: "https://www.youtube.com/watch?v=dQw4w9WgXcQ")!)
         }
-        // Only type 69 (2) and equal is pressed
-        else if 26...28 ~= random && currOps == .equal {
-            only69 = true
-        }
-        // + button ad (5) and + is pressed
-        else if 26...30 ~= random && currOps == .add {
-            if !removeAd {
-                showInterstitialAd = true
-                
-                // scheduling notification
-                AppNotification().scheduleAd()
-            }
-        }
-        // Banner blocking answer (10)
-        else if 31...40 ~= random {
-            bannerBlock = true
-        }
+//        // Only type 69 (2) and equal is pressed
+//        else if 26...28 ~= random && currOps == .equal {
+//            only69 = true
+//        }
+//        // + button ad (5) and + is pressed
+//        else if 26...30 ~= random && currOps == .add {
+//            if !removeAd {
+//                showInterstitialAd = true
+//
+//                // scheduling notification
+//                AppNotification().scheduleAd()
+//            }
+//        }
+//        // Banner blocking answer (10)
+//        else if 31...40 ~= random {
+//            bannerBlock = true
+//        }
         
         // Calculate normally
         else {

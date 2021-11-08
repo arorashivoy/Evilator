@@ -12,10 +12,12 @@
 		832BD333273436DA00D81DE0 /* InterstitialAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD332273436DA00D81DE0 /* InterstitialAd.swift */; };
 		832BD33627345F3100D81DE0 /* FullScreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD33527345F3100D81DE0 /* FullScreenModifier.swift */; };
 		832BD33C2734834100D81DE0 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD33B2734834100D81DE0 /* BannerAd.swift */; };
-		83B5D94D273800D600B4D4B8 /* RemoveAdPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B5D94C273800D500B4D4B8 /* RemoveAdPage.swift */; };
+		83B5D94D273800D600B4D4B8 /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B5D94C273800D500B4D4B8 /* SettingsPage.swift */; };
 		83B5D9512738292500B4D4B8 /* AdIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B5D9502738292500B4D4B8 /* AdIds.swift */; };
 		83B5D9552739453C00B4D4B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83B5D9542739453C00B4D4B8 /* GoogleService-Info.plist */; };
 		83B872862732CB64008A8FF9 /* CalDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B872852732CB64008A8FF9 /* CalDisplay.swift */; };
+		83D1D71927396CB700017BF1 /* LearnMoreRemoveAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1D71827396CB700017BF1 /* LearnMoreRemoveAd.swift */; };
+		83D1D71B2739892300017BF1 /* ViewOnGithub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D1D71A2739892300017BF1 /* ViewOnGithub.swift */; };
 		83D5BA1427301743009F4C07 /* EvilatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA1327301743009F4C07 /* EvilatorApp.swift */; };
 		83D5BA1627301743009F4C07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA1527301743009F4C07 /* ContentView.swift */; };
 		83D5BA1827301744009F4C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D5BA1727301744009F4C07 /* Assets.xcassets */; };
@@ -35,12 +37,14 @@
 		832BD33527345F3100D81DE0 /* FullScreenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenModifier.swift; sourceTree = "<group>"; };
 		832BD33B2734834100D81DE0 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		835566CA27340897009666B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		83B5D94C273800D500B4D4B8 /* RemoveAdPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAdPage.swift; sourceTree = "<group>"; };
+		83B5D94C273800D500B4D4B8 /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 		83B5D9502738292500B4D4B8 /* AdIds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdIds.swift; sourceTree = "<group>"; };
 		83B5D9522739379A00B4D4B8 /* Evilator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Evilator.entitlements; sourceTree = "<group>"; };
 		83B5D953273937B000B4D4B8 /* EvilatorRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EvilatorRelease.entitlements; sourceTree = "<group>"; };
 		83B5D9542739453C00B4D4B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83B872852732CB64008A8FF9 /* CalDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalDisplay.swift; sourceTree = "<group>"; };
+		83D1D71827396CB700017BF1 /* LearnMoreRemoveAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMoreRemoveAd.swift; sourceTree = "<group>"; };
+		83D1D71A2739892300017BF1 /* ViewOnGithub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOnGithub.swift; sourceTree = "<group>"; };
 		83D5BA1027301743009F4C07 /* Evilator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evilator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D5BA1327301743009F4C07 /* EvilatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvilatorApp.swift; sourceTree = "<group>"; };
 		83D5BA1527301743009F4C07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,7 +92,7 @@
 			children = (
 				83D5BA1527301743009F4C07 /* ContentView.swift */,
 				83D5BA2527301872009F4C07 /* Calculator.swift */,
-				83B5D94C273800D500B4D4B8 /* RemoveAdPage.swift */,
+				83B5D94C273800D500B4D4B8 /* SettingsPage.swift */,
 				83B872882732CEBF008A8FF9 /* Helper */,
 			);
 			path = Views;
@@ -108,8 +112,10 @@
 		83B872882732CEBF008A8FF9 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				83D1D71A2739892300017BF1 /* ViewOnGithub.swift */,
 				83B872852732CB64008A8FF9 /* CalDisplay.swift */,
 				8304D7C52735392100D98795 /* EvilFunctions.swift */,
+				83D1D71827396CB700017BF1 /* LearnMoreRemoveAd.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -288,10 +294,12 @@
 				83D5BA1627301743009F4C07 /* ContentView.swift in Sources */,
 				83B872862732CB64008A8FF9 /* CalDisplay.swift in Sources */,
 				83D5BA1427301743009F4C07 /* EvilatorApp.swift in Sources */,
+				83D1D71927396CB700017BF1 /* LearnMoreRemoveAd.swift in Sources */,
 				83B5D9512738292500B4D4B8 /* AdIds.swift in Sources */,
-				83B5D94D273800D600B4D4B8 /* RemoveAdPage.swift in Sources */,
+				83B5D94D273800D600B4D4B8 /* SettingsPage.swift in Sources */,
 				83FF3FC9273558B000A705E7 /* AppNotification.swift in Sources */,
 				832BD33C2734834100D81DE0 /* BannerAd.swift in Sources */,
+				83D1D71B2739892300017BF1 /* ViewOnGithub.swift in Sources */,
 				832BD32B2734117000D81DE0 /* AppDelegate.swift in Sources */,
 				832BD33627345F3100D81DE0 /* FullScreenModifier.swift in Sources */,
 				8304D7C62735392100D98795 /* EvilFunctions.swift in Sources */,
@@ -433,6 +441,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Evilator/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -444,7 +453,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.arorashivoy.Evilator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -467,6 +476,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Evilator/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -478,7 +488,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.arorashivoy.Evilator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

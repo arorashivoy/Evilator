@@ -67,6 +67,7 @@ struct CalDisplay: View {
                     }
                 
             }
+            .padding([.leading, .trailing])
             
             // Evil Function
             /// Banner Blocking ans
@@ -132,12 +133,13 @@ struct CalDisplay: View {
                 }
             }
         }
+        .padding([.leading, .trailing])
     }
 }
 
 struct CalDisplay_Previews: PreviewProvider {
     static var previews: some View {
-        CalDisplay(equation: .constant(""), showNumber: .constant("0"), numLimit: .constant(false), flippedAns: .constant(false), bannerBlock: .constant(true))
+        CalDisplay(equation: .constant(""), showNumber: .constant("0"), numLimit: .constant(false), flippedAns: .constant(false), bannerBlock: .constant(false))
             .preferredColorScheme(.dark)
     }
 }

@@ -27,24 +27,32 @@ struct Calculator: View {
     @State private var bannerBlock: Bool = false
     
     var body: some View {
-        VStack(alignment: .trailing){
+        VStack{
             
             if !removeAd {
                 // Banner Ad
                 /// different adunit id for test and final release
                 #if DEBUG
                 SwiftUIBannerAD(adUnitId: AdIds.testBanner.rawValue)
+                    .ignoresSafeArea()
+                    .padding()
                 #else
                 SwiftUIBannerAD(adUnitId: AdIds.Banner.rawValue)
+                    .ignoresSafeArea()
+                    .padding()
                 #endif
             }
             
-            
             Spacer()
             
-            // Display
-            CalDisplay(equation: $equation, showNumber: $showNumber, numLimit: $numLimit, flippedAns: $flippedAns, bannerBlock: $bannerBlock)
-            
+            HStack {
+                
+                Spacer()
+                
+                // Display
+                CalDisplay(equation: $equation, showNumber: $showNumber, numLimit: $numLimit, flippedAns: $flippedAns, bannerBlock: $bannerBlock)
+                
+            }
             // Row 1
             HStack{
                 // Clear
@@ -60,7 +68,7 @@ struct Calculator: View {
                     ZStack{
                         Circle()
                             .foregroundColor(.gray)
-                            .frame(width: 70, height: 70)
+                            .frame(width: 65, height: 65)
                         Text("AC")
                             .font(.title)
                             .foregroundColor(.gray.accessibleFontColor)
@@ -77,12 +85,12 @@ struct Calculator: View {
                     ZStack{
                         Circle()
                             .foregroundColor(.gray)
-                            .frame(width: 70, height: 70)
+                            .frame(width: 65, height: 65)
                         Text("AD")
                             .font(.title)
                             .foregroundColor(.gray.accessibleFontColor)
                             .padding()
-                            .padding([.leading, .trailing])
+                            .padding([.leading, .trailing], 10)
                     }
                 }
 
@@ -92,11 +100,11 @@ struct Calculator: View {
                 }label: {
                     Image("RemoveAdImage")
                         .resizable()
-                        .frame(width: 75, height: 75, alignment: .center)
+                        .frame(width: 70, height: 70, alignment: .center)
                         .padding([.leading, .trailing], 6)
                 }
                 .sheet(isPresented: $showSettings) {
-                    RemoveAdPage()
+                    SettingsPage()
                         .preferredColorScheme(.dark)
                 }
 

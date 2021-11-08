@@ -23,7 +23,7 @@ struct SetButton: ButtonStyle {
         ZStack{
             Circle()
                 .foregroundColor(bgColor)
-                .frame(width: 70, height: 70)
+                .frame(width: 65, height: 65)
             configuration.label
                 .font(.title.bold())
                 .foregroundColor(bgColor.accessibleFontColor)
@@ -42,7 +42,7 @@ struct OpsButton: ButtonStyle {
         ZStack{
             Circle()
                 .foregroundColor(wasPressed ? .white : .orange)
-                .frame(width: 70, height: 70)
+                .frame(width: 65, height: 65)
             configuration.label
                 .font(.title.bold())
                 .foregroundColor(wasPressed ? .orange : .white)

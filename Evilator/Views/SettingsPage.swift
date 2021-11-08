@@ -7,21 +7,22 @@
 
 import SwiftUI
 
-struct RemoveAdPage: View {
+struct SettingsPage: View {
     @Environment(\.presentationMode) var presentationMode
     @AppStorage("removeAd") var removeAd: Bool = false
     @State private var removeAdCode: String = ""
     @State private var correctCode: Bool?
+    @State private var learnMore: Bool = false
     
     var body: some View {
         VStack{
             // Toolbar
             HStack{
-                Button("Cancel"){
+                Spacer()
+                
+                Button("Done"){
                     presentationMode.wrappedValue.dismiss()
                 }
-                
-                Spacer()
             }
             .padding()
             
@@ -29,14 +30,19 @@ struct RemoveAdPage: View {
             
             // Main
             List{
+                
+                // Remove ad
                 Section {
                     HStack(alignment: .bottom){
                         Text("Share this app to get the code")
                         Button{
-                            print("learn More")
+                            learnMore = true
                         }label :{
                             Text("Learn more")
                                 .font(.footnote)
+                        }
+                        .sheet(isPresented: $learnMore) {
+                            LearnMoreRemoveAd()
                         }
                     }
                     TextField("Enter the code", text: $removeAdCode)
@@ -68,6 +74,13 @@ struct RemoveAdPage: View {
                     Text("Remove Banner Ads")
                 }
                 
+                // Github button
+                Section {
+                    ViewOnGithub(bgColor: .white)
+                }header: {
+                    Text("Github")
+                }
+                
             }
         }
     }
@@ -75,7 +88,7 @@ struct RemoveAdPage: View {
 
 struct SettingsPage_Previews: PreviewProvider {
     static var previews: some View {
-        RemoveAdPage()
+        SettingsPage()
             .preferredColorScheme(.dark)
     }
 }
