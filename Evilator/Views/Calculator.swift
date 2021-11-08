@@ -69,11 +69,12 @@ struct Calculator: View {
                         Circle()
                             .foregroundColor(.gray)
                             .frame(width: 65, height: 65)
+                            .padding([.leading, .trailing], 10)
                         Text("AC")
                             .font(.title)
                             .foregroundColor(.gray.accessibleFontColor)
-                            .padding()
-                            .padding([.leading, .trailing], 5)
+//                            .padding()
+                            .padding([.leading, .trailing])
                     }
                 }
 
@@ -86,11 +87,12 @@ struct Calculator: View {
                         Circle()
                             .foregroundColor(.gray)
                             .frame(width: 65, height: 65)
+                            .padding([.leading, .trailing], 10)
                         Text("AD")
                             .font(.title)
                             .foregroundColor(.gray.accessibleFontColor)
-                            .padding()
-                            .padding([.leading, .trailing], 10)
+//                            .padding()
+                            .padding([.leading, .trailing])
                     }
                 }
 
@@ -98,10 +100,18 @@ struct Calculator: View {
                 Button{
                     showSettings = true
                 }label: {
-                    Image("RemoveAdImage")
-                        .resizable()
-                        .frame(width: 70, height: 70, alignment: .center)
-                        .padding([.leading, .trailing], 6)
+                    ZStack{
+                        Circle()
+                            .foregroundColor(.gray)
+                            .frame(width: 65, height: 65, alignment: .center)
+                            .padding([.leading, .trailing], 10)
+                        Image(systemName: "gearshape.fill")
+                            .foregroundColor(.white)
+                            .font(.title)
+//                            .padding()
+                            .padding([.leading, .trailing])
+                        
+                    }
                 }
                 .sheet(isPresented: $showSettings) {
                     SettingsPage()
@@ -201,7 +211,7 @@ struct Calculator: View {
                     ZStack(alignment: .leading){
                         Capsule()
                             .foregroundColor(.gray.opacity(0.4))
-                            .frame(width: 165, height: 70)
+                            .frame(width: 162, height: 65)
                         Text("0")
                             .font(.title.bold())
                             .foregroundColor(.gray.accessibleFontColor)
@@ -209,7 +219,7 @@ struct Calculator: View {
                             .padding([.leading, .trailing], 5)
                     }
                 }
-                .padding()
+                .padding(10)
 
                 // . button
                 Button("."){

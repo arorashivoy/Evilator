@@ -28,12 +28,13 @@ struct CalDisplay: View {
                 Text(equation)
                     .padding(.trailing)
                     .padding(.trailing, 7)
+//                    .padding(.top, -5)
                 
                 // Answer
                 Text(showNumber)
                     .font(.system(size: 90))
                     .minimumScaleFactor(0.5)
-                    .padding()
+                    .padding([.trailing, .leading])
                 /// Rotating for evil func
                     .rotationEffect(flippedAns ? Angle(degrees: 180) : Angle(degrees: 0))
                 /// vibrations when number reaches the limit of 11

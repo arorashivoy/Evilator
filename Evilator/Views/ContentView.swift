@@ -27,7 +27,7 @@ struct SetButton: ButtonStyle {
             configuration.label
                 .font(.title.bold())
                 .foregroundColor(bgColor.accessibleFontColor)
-                .padding()
+//                .padding()
                 .padding([.leading, .trailing], 5)
         }
         .padding(10)
@@ -46,7 +46,7 @@ struct OpsButton: ButtonStyle {
             configuration.label
                 .font(.title.bold())
                 .foregroundColor(wasPressed ? .orange : .white)
-                .padding()
+//                .padding()
                 .padding([.leading, .trailing], 5)
         }
         .padding(10)
