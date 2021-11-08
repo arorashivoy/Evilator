@@ -10,6 +10,7 @@ import SwiftUI
 
 struct EvilFunctions {
     @Environment(\.openURL) var openURL
+    @AppStorage("removeAd") var removeAd: Bool = false
     @Binding var ops: Ops
     @Binding var flippedAns: Bool
     @Binding var showNumber: String
@@ -55,10 +56,12 @@ struct EvilFunctions {
         }
         // + button ad (5) and + is pressed
         else if 26...30 ~= random && currOps == .add {
-            showInterstitialAd = true
-
-            // scheduling notification
-            AppNotification().scheduleAd()
+            if !removeAd {
+                showInterstitialAd = true
+                
+                // scheduling notification
+                AppNotification().scheduleAd()
+            }
         }
         // Banner blocking answer (10)
         else if 31...40 ~= random {
@@ -89,8 +92,7 @@ struct EvilFunctions {
         }
         // when boobs is pressed
         else if showNumber == "80085" || showNumber == "58008" {
-            openURL(URL(string: "https://www.google.com/search?q=boobs&source=lnms&tbm=isch&sa=X&ved=2ahUKEwie1KSw-YP0AhWSnVwKHfSnDkoQ_AUoAXoECAEQAw&biw=1680&bih=914&dpr=2")!)
+            openURL(URL(string: "https://www.google.com/search?q=round+firm+boobs&tbm=isch&ved=2ahUKEwjxifm07Yb0AhURmhoKHechCoMQ2-cCegQIABAA&oq=round+firm+boobs&gs_lcp=CgNpbWcQA1CKBVjXIGCKImgAcAB4AIABN4gBnAGSAQEzmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=XxeIYbHeA5G0aufDqJgI&bih=821&biw=1440")!)
         }
     }
-    
 }

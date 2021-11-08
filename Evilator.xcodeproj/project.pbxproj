@@ -12,8 +12,9 @@
 		832BD333273436DA00D81DE0 /* InterstitialAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD332273436DA00D81DE0 /* InterstitialAd.swift */; };
 		832BD33627345F3100D81DE0 /* FullScreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD33527345F3100D81DE0 /* FullScreenModifier.swift */; };
 		832BD33C2734834100D81DE0 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD33B2734834100D81DE0 /* BannerAd.swift */; };
-		83B5D94D273800D600B4D4B8 /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B5D94C273800D500B4D4B8 /* SettingsPage.swift */; };
+		83B5D94D273800D600B4D4B8 /* RemoveAdPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B5D94C273800D500B4D4B8 /* RemoveAdPage.swift */; };
 		83B5D9512738292500B4D4B8 /* AdIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B5D9502738292500B4D4B8 /* AdIds.swift */; };
+		83B5D9552739453C00B4D4B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83B5D9542739453C00B4D4B8 /* GoogleService-Info.plist */; };
 		83B872862732CB64008A8FF9 /* CalDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B872852732CB64008A8FF9 /* CalDisplay.swift */; };
 		83D5BA1427301743009F4C07 /* EvilatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA1327301743009F4C07 /* EvilatorApp.swift */; };
 		83D5BA1627301743009F4C07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5BA1527301743009F4C07 /* ContentView.swift */; };
@@ -34,8 +35,11 @@
 		832BD33527345F3100D81DE0 /* FullScreenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenModifier.swift; sourceTree = "<group>"; };
 		832BD33B2734834100D81DE0 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		835566CA27340897009666B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		83B5D94C273800D500B4D4B8 /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
+		83B5D94C273800D500B4D4B8 /* RemoveAdPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAdPage.swift; sourceTree = "<group>"; };
 		83B5D9502738292500B4D4B8 /* AdIds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdIds.swift; sourceTree = "<group>"; };
+		83B5D9522739379A00B4D4B8 /* Evilator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Evilator.entitlements; sourceTree = "<group>"; };
+		83B5D953273937B000B4D4B8 /* EvilatorRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EvilatorRelease.entitlements; sourceTree = "<group>"; };
+		83B5D9542739453C00B4D4B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83B872852732CB64008A8FF9 /* CalDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalDisplay.swift; sourceTree = "<group>"; };
 		83D5BA1027301743009F4C07 /* Evilator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evilator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D5BA1327301743009F4C07 /* EvilatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvilatorApp.swift; sourceTree = "<group>"; };
@@ -82,11 +86,9 @@
 		832BD32F27342F4B00D81DE0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				83D5BA1327301743009F4C07 /* EvilatorApp.swift */,
-				832BD32A2734117000D81DE0 /* AppDelegate.swift */,
 				83D5BA1527301743009F4C07 /* ContentView.swift */,
 				83D5BA2527301872009F4C07 /* Calculator.swift */,
-				83B5D94C273800D500B4D4B8 /* SettingsPage.swift */,
+				83B5D94C273800D500B4D4B8 /* RemoveAdPage.swift */,
 				83B872882732CEBF008A8FF9 /* Helper */,
 			);
 			path = Views;
@@ -135,10 +137,15 @@
 		83D5BA1227301743009F4C07 /* Evilator */ = {
 			isa = PBXGroup;
 			children = (
+				83B5D953273937B000B4D4B8 /* EvilatorRelease.entitlements */,
+				83B5D9522739379A00B4D4B8 /* Evilator.entitlements */,
+				83D5BA1327301743009F4C07 /* EvilatorApp.swift */,
+				832BD32A2734117000D81DE0 /* AppDelegate.swift */,
 				832BD32F27342F4B00D81DE0 /* Views */,
 				832BD334273436E200D81DE0 /* Admob */,
 				83FF3FCA273558B600A705E7 /* Modal */,
 				835566CA27340897009666B8 /* Info.plist */,
+				83B5D9542739453C00B4D4B8 /* GoogleService-Info.plist */,
 				83D5BA1727301744009F4C07 /* Assets.xcassets */,
 				83D5BA1927301744009F4C07 /* Preview Content */,
 			);
@@ -223,6 +230,7 @@
 			files = (
 				83D5BA242730185E009F4C07 /* .gitignore in Resources */,
 				83D5BA22273017A5009F4C07 /* README.md in Resources */,
+				83B5D9552739453C00B4D4B8 /* GoogleService-Info.plist in Resources */,
 				83D5BA1B27301744009F4C07 /* Preview Assets.xcassets in Resources */,
 				83D5BA1827301744009F4C07 /* Assets.xcassets in Resources */,
 			);
@@ -281,7 +289,7 @@
 				83B872862732CB64008A8FF9 /* CalDisplay.swift in Sources */,
 				83D5BA1427301743009F4C07 /* EvilatorApp.swift in Sources */,
 				83B5D9512738292500B4D4B8 /* AdIds.swift in Sources */,
-				83B5D94D273800D600B4D4B8 /* SettingsPage.swift in Sources */,
+				83B5D94D273800D600B4D4B8 /* RemoveAdPage.swift in Sources */,
 				83FF3FC9273558B000A705E7 /* AppNotification.swift in Sources */,
 				832BD33C2734834100D81DE0 /* BannerAd.swift in Sources */,
 				832BD32B2734117000D81DE0 /* AppDelegate.swift in Sources */,
@@ -417,6 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Evilator/Evilator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Evilator/Preview Content\"";
@@ -450,6 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Evilator/EvilatorRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Evilator/Preview Content\"";

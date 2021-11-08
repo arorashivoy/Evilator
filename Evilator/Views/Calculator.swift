@@ -19,6 +19,7 @@ struct Calculator: View {
     @State private var decimal: Decimal = 0
     
     @State private var showInterstitialAd: Bool = false
+    @State private var showSettings: Bool = false
     
     // For Evil functions
     @State private var flippedAns: Bool = false
@@ -77,7 +78,7 @@ struct Calculator: View {
                         Circle()
                             .foregroundColor(.gray)
                             .frame(width: 70, height: 70)
-                        Text("Ad")
+                        Text("AD")
                             .font(.title)
                             .foregroundColor(.gray.accessibleFontColor)
                             .padding()
@@ -85,10 +86,20 @@ struct Calculator: View {
                     }
                 }
 
-                Button("%"){
-                    print("%")
+                // Remove ad button
+                Button{
+                    showSettings = true
+                }label: {
+                    Image("RemoveAdImage")
+                        .resizable()
+                        .frame(width: 75, height: 75, alignment: .center)
+                        .padding([.leading, .trailing], 6)
                 }
-                .buttonStyle(SetButton(bgColor: .gray))
+                .sheet(isPresented: $showSettings) {
+                    RemoveAdPage()
+                        .preferredColorScheme(.dark)
+                }
+
 
                 Button("÷"){
                     opsPressed(ops: .divide)
