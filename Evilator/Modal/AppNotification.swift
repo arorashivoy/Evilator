@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import UserNotifications
 import NotificationCenter
+import FirebaseMessaging
+import CoreTelephony
 
 class AppNotification {
     

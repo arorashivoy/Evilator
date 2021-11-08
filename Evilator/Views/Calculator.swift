@@ -107,6 +107,7 @@ struct Calculator: View {
                 .buttonStyle(OpsButton(wasPressed: ops == .divide))
 
             }
+            .padding([.leading, .trailing])
 
             // Row 2
             HStack{
@@ -131,6 +132,7 @@ struct Calculator: View {
                 .buttonStyle(OpsButton(wasPressed: ops == .multiply))
 
             }
+            .padding([.leading, .trailing])
 
             // Row 3
             HStack{
@@ -155,6 +157,7 @@ struct Calculator: View {
                 .buttonStyle(OpsButton(wasPressed: ops == .subtract))
 
             }
+            .padding([.leading, .trailing])
 
             // Row 4
             HStack{
@@ -179,6 +182,7 @@ struct Calculator: View {
                 .buttonStyle(OpsButton(wasPressed: ops == .add))
 
             }
+            .padding([.leading, .trailing])
 
             // Row 5
             HStack{
@@ -189,7 +193,7 @@ struct Calculator: View {
                     ZStack(alignment: .leading){
                         Capsule()
                             .foregroundColor(.gray.opacity(0.4))
-                            .frame(width: 160, height: 70)
+                            .frame(width: 165, height: 70)
                         Text("0")
                             .font(.title.bold())
                             .foregroundColor(.gray.accessibleFontColor)
@@ -228,7 +232,9 @@ struct Calculator: View {
                     }
                 }
             }
+            .padding([.leading, .trailing])
         }
+        .padding()
         
         //TODO: uncomment ad
         // Presention interstitial ad

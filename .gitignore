@@ -4,3 +4,6 @@
 
 Evilator/Info.plist
 Evilator/Admob/AdIds.swift
+
+#APNs authentication key
+EvilatorAPNsAuthKey.p8

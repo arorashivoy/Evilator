@@ -10,6 +10,7 @@ import SwiftUI
 import GoogleMobileAds
 import AppTrackingTransparency
 import AdSupport
+import Firebase
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
@@ -20,6 +21,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         // Foreground Notification
         UNUserNotificationCenter.current().delegate = self
+        
+        // Use Firebase library to configure APIs
+        FirebaseApp.configure()
         
         // setting up remote notification
         UIApplication.shared.registerForRemoteNotifications()
@@ -33,6 +37,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         return true
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        // Print full message
+        print(userInfo)
+        
+        completionHandler(UIBackgroundFetchResult.newData)
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

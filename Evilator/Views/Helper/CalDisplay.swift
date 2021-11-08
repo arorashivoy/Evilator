@@ -91,7 +91,6 @@ struct CalDisplay: View {
                             Spacer()
                         }
                         .padding()
-                        .ignoresSafeArea()
                         
                         Spacer()
                     }
