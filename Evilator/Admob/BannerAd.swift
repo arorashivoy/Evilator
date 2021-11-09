@@ -31,6 +31,7 @@ public struct SwiftUIBannerAD: View {
                 .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
                     setFrame()
                 }
+            
         }
     }
     

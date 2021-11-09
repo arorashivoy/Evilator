@@ -50,19 +50,21 @@ struct SettingsPage: View {
                         if removeAdCodes.contains(removeAdCode) {
                             removeAd = true
                             correctCode = true
+                        }else {
+                            correctCode = false
                         }
                     }
                     
                     // Success message
                     if let val = correctCode {
                         if val {
-                            VStack{
+                            VStack(alignment: .leading){
                                 Text("Code succesfully applied")
                                     .foregroundColor(.green)
                                 Text("Banner Ads are disabled")
                             }
                         }else {
-                            VStack{
+                            VStack(alignment: .leading){
                                 Text("Try Again")
                                     .foregroundColor(.red)
                                 Text("Incorrect code entered")

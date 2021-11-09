@@ -23,14 +23,11 @@ struct SetButton: ButtonStyle {
         ZStack{
             Circle()
                 .foregroundColor(bgColor)
-                .frame(width: 65, height: 65)
+                .frame(width: (UIScreen.main.bounds.width - 40) / 4, height: (UIScreen.main.bounds.width - 40) / 4)
             configuration.label
                 .font(.title.bold())
                 .foregroundColor(bgColor.accessibleFontColor)
-//                .padding()
-                .padding([.leading, .trailing], 5)
         }
-        .padding(10)
     }
 }
 
@@ -42,14 +39,11 @@ struct OpsButton: ButtonStyle {
         ZStack{
             Circle()
                 .foregroundColor(wasPressed ? .white : .orange)
-                .frame(width: 65, height: 65)
+                .frame(width: (UIScreen.main.bounds.width - 40) / 4, height: (UIScreen.main.bounds.width - 40) / 4)
             configuration.label
                 .font(.title.bold())
                 .foregroundColor(wasPressed ? .orange : .white)
-//                .padding()
-                .padding([.leading, .trailing], 5)
         }
-        .padding(10)
     }
 }
 

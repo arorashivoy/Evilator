@@ -24,11 +24,16 @@ struct CalDisplay: View {
             
             // Calculator display
             VStack(alignment: .trailing){
+                
+                Spacer()
+                
                 // Equation
                 Text(equation)
                     .padding(.trailing)
                     .padding(.trailing, 7)
-//                    .padding(.top, -5)
+                    .padding(.top, -5)
+                
+                Spacer()
                 
                 // Answer
                 Text(showNumber)
@@ -68,7 +73,7 @@ struct CalDisplay: View {
                     }
                 
             }
-            .padding([.leading, .trailing])
+            .padding([.leading])
             
             // Evil Function
             /// Banner Blocking ans
@@ -96,6 +101,7 @@ struct CalDisplay: View {
                         
                         Spacer()
                     }
+                    .padding()
                     
                     // Decoy Button
                     Button{
@@ -134,7 +140,7 @@ struct CalDisplay: View {
                 }
             }
         }
-        .padding([.leading, .trailing])
+        .padding([.leading])
     }
 }
 

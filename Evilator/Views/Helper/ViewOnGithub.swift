@@ -35,7 +35,6 @@ struct ViewOnGithub: View {
                             .font(.caption)
                             .bold()
                             .padding(.bottom, 0)
-//                            .padding(.top, 5)
                             .offset(x: 8, y: 15.0)
                         
                         /// Github text image

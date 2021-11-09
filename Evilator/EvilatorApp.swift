@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-//TODO: change ad app it to evilator's from admod
 
 @main
 struct EvilatorApp: App {

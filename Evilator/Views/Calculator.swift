@@ -29,21 +29,18 @@ struct Calculator: View {
     var body: some View {
         VStack{
             
+            // Banner Ad
+            /// different adunit id for test and final release
+            
             if !removeAd {
-                // Banner Ad
-                /// different adunit id for test and final release
                 #if DEBUG
                 SwiftUIBannerAD(adUnitId: AdIds.testBanner.rawValue)
-                    .ignoresSafeArea()
-                    .padding()
+                    .padding(.bottom)
                 #else
                 SwiftUIBannerAD(adUnitId: AdIds.Banner.rawValue)
-                    .ignoresSafeArea()
-                    .padding()
+                    .padding(.bottom)
                 #endif
             }
-            
-            Spacer()
             
             HStack {
                 
@@ -53,155 +50,119 @@ struct Calculator: View {
                 CalDisplay(equation: $equation, showNumber: $showNumber, numLimit: $numLimit, flippedAns: $flippedAns, bannerBlock: $bannerBlock)
                 
             }
+            
             // Row 1
             HStack{
                 // Clear
-                Button{
+                Button("AC"){
                     number = 0
                     equation = ""
                     showNumber = "0"
                     decimal = 0
                     ops = .none
                     flippedAns = false
-
-                }label: {
-                    ZStack{
-                        Circle()
-                            .foregroundColor(.gray)
-                            .frame(width: 65, height: 65)
-                            .padding([.leading, .trailing], 10)
-                        Text("AC")
-                            .font(.title)
-                            .foregroundColor(.gray.accessibleFontColor)
-//                            .padding()
-                            .padding([.leading, .trailing])
-                    }
+                    
                 }
-
+                .buttonStyle(SetButton(bgColor: .gray))
+                
                 // Ad Button
-                Button{
-                    print("Showing Ad")
+                Button("AD"){
                     showInterstitialAd.toggle()
-                }label: {
-                    ZStack{
-                        Circle()
-                            .foregroundColor(.gray)
-                            .frame(width: 65, height: 65)
-                            .padding([.leading, .trailing], 10)
-                        Text("AD")
-                            .font(.title)
-                            .foregroundColor(.gray.accessibleFontColor)
-//                            .padding()
-                            .padding([.leading, .trailing])
-                    }
                 }
-
-                // Remove ad button
+                .buttonStyle(SetButton(bgColor: .gray))
+                
+                // Settings button
                 Button{
                     showSettings = true
                 }label: {
-                    ZStack{
-                        Circle()
-                            .foregroundColor(.gray)
-                            .frame(width: 65, height: 65, alignment: .center)
-                            .padding([.leading, .trailing], 10)
-                        Image(systemName: "gearshape.fill")
-                            .foregroundColor(.white)
-                            .font(.title)
-//                            .padding()
-                            .padding([.leading, .trailing])
-                        
-                    }
+                    Image(systemName: "gearshape.fill")
                 }
+                .buttonStyle(SetButton(bgColor: .gray))
                 .sheet(isPresented: $showSettings) {
                     SettingsPage()
                         .preferredColorScheme(.dark)
                 }
-
-
+                
+                
                 Button("÷"){
                     opsPressed(ops: .divide)
                 }
                 .buttonStyle(OpsButton(wasPressed: ops == .divide))
-
+                
             }
-            .padding([.leading, .trailing])
-
+            
             // Row 2
             HStack{
                 Button("7"){
                     numPressed(num: 7.0)
                 }
                 .buttonStyle(SetButton(bgColor: .gray.opacity(0.4)))
-
+                
                 Button("8"){
                     numPressed(num: 8.0)
                 }
                 .buttonStyle(SetButton(bgColor: .gray.opacity(0.4)))
-
+                
                 Button("9"){
                     numPressed(num: 9.0)
                 }
                 .buttonStyle(SetButton(bgColor: .gray.opacity(0.4)))
-
+                
                 Button("x"){
                     opsPressed(ops: .multiply)
                 }
                 .buttonStyle(OpsButton(wasPressed: ops == .multiply))
-
+                
             }
-            .padding([.leading, .trailing])
-
+            
             // Row 3
             HStack{
                 Button("4"){
                     numPressed(num: 4.0)
                 }
                 .buttonStyle(SetButton(bgColor: .gray.opacity(0.4)))
-
+                
                 Button("5"){
                     numPressed(num: 5.0)
                 }
                 .buttonStyle(SetButton(bgColor: .gray.opacity(0.4)))
-
+                
                 Button("6"){
                     numPressed(num: 6.0)
                 }
                 .buttonStyle(SetButton(bgColor: .gray.opacity(0.4)))
-
+                
                 Button("-"){
                     opsPressed(ops: .subtract)
                 }
                 .buttonStyle(OpsButton(wasPressed: ops == .subtract))
-
+                
             }
-            .padding([.leading, .trailing])
-
+            
             // Row 4
             HStack{
                 Button("1"){
                     numPressed(num: 1.0)
                 }
                 .buttonStyle(SetButton(bgColor: .gray.opacity(0.4)))
-
+                
                 Button("2"){
                     numPressed(num: 2.0)
                 }
                 .buttonStyle(SetButton(bgColor: .gray.opacity(0.4)))
-
+                
                 Button("3"){
                     numPressed(num: 3.0)
                 }
                 .buttonStyle(SetButton(bgColor: .gray.opacity(0.4)))
-
+                
                 Button("+"){
                     opsPressed(ops: .add)
                 }
                 .buttonStyle(OpsButton(wasPressed: ops == .add))
-
+                
             }
-            .padding([.leading, .trailing])
-
+            
             // Row 5
             HStack{
                 // 0 Button
@@ -211,16 +172,15 @@ struct Calculator: View {
                     ZStack(alignment: .leading){
                         Capsule()
                             .foregroundColor(.gray.opacity(0.4))
-                            .frame(width: 162, height: 65)
+                            .frame(width: (UIScreen.main.bounds.width - 40) / 2, height: (UIScreen.main.bounds.width - 40) / 4)
                         Text("0")
                             .font(.title.bold())
                             .foregroundColor(.gray.accessibleFontColor)
-                            .padding()
-                            .padding([.leading, .trailing], 5)
+                            .padding([.leading])
                     }
                 }
-                .padding(10)
-
+                .padding([.leading], 5)
+                
                 // . button
                 Button("."){
                     if decimal == 0{
@@ -233,7 +193,7 @@ struct Calculator: View {
                     }
                 }
                 .buttonStyle(SetButton(bgColor: .gray.opacity(0.4)))
-
+                
                 // = button
                 Button("="){
                     opsPressed(ops: .equal)
@@ -250,11 +210,9 @@ struct Calculator: View {
                     }
                 }
             }
-            .padding([.leading, .trailing])
         }
-        .padding()
+        .padding([.leading, .trailing])
         
-        //TODO: uncomment ad
         // Presention interstitial ad
         /// Different ad unit id for test and final release
         #if DEBUG
@@ -275,12 +233,16 @@ struct Calculator: View {
             if decimal != 0 {
                 number += num * decimal
                 decimal /= 10
+                if num != 0 {
+                    showNumber = number.description
+                }else {
+                    showNumber += "0"
+                }
                 
             }else {
                 number = (number * 10) + num
-                
+                showNumber = number.description
             }
-            showNumber = number.description
             
             // Evil functions
             DispatchQueue.main.async {
@@ -288,7 +250,6 @@ struct Calculator: View {
             }
             
         }else {
-            print("Show vibration")
             numLimit = true
         }
         
@@ -356,5 +317,6 @@ struct Calculator_Previews: PreviewProvider {
     static var previews: some View {
         Calculator()
             .preferredColorScheme(.dark)
+            .environment(\.sizeCategory, .small)
     }
 }
