@@ -61,7 +61,7 @@ struct SettingsPage: View {
                             VStack(alignment: .leading){
                                 Text("Code succesfully applied")
                                     .foregroundColor(.green)
-                                Text("Banner Ads are disabled")
+                                Text("Ads are disabled")
                             }
                         }else {
                             VStack(alignment: .leading){

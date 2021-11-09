@@ -27,11 +27,10 @@ struct Calculator: View {
     @State private var bannerBlock: Bool = false
     
     var body: some View {
-        VStack{
+        VStack(alignment: .trailing){
             
             // Banner Ad
             /// different adunit id for test and final release
-            
             if !removeAd {
                 #if DEBUG
                 SwiftUIBannerAD(adUnitId: AdIds.testBanner.rawValue)
@@ -42,14 +41,8 @@ struct Calculator: View {
                 #endif
             }
             
-            HStack {
-                
-                Spacer()
-                
-                // Display
-                CalDisplay(equation: $equation, showNumber: $showNumber, numLimit: $numLimit, flippedAns: $flippedAns, bannerBlock: $bannerBlock)
-                
-            }
+            // Display
+            CalDisplay(equation: $equation, showNumber: $showNumber, numLimit: $numLimit, flippedAns: $flippedAns, bannerBlock: $bannerBlock)
             
             // Row 1
             HStack{

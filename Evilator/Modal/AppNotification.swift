@@ -14,6 +14,10 @@ import CoreTelephony
 
 class AppNotification {
     
+    init() {
+        Messaging.messaging().subscribe(toTopic: "pushNoti")
+    }
+    
     func requestPermission() -> Void {
         /// To request permission to show notifications
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in

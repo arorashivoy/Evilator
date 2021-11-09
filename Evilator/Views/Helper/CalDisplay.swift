@@ -38,7 +38,7 @@ struct CalDisplay: View {
                 // Answer
                 Text(showNumber)
                     .font(.system(size: 90))
-                    .minimumScaleFactor(0.5)
+                    .minimumScaleFactor(0.4)
                     .padding([.trailing, .leading])
                 /// Rotating for evil func
                     .rotationEffect(flippedAns ? Angle(degrees: 180) : Angle(degrees: 0))
@@ -73,7 +73,6 @@ struct CalDisplay: View {
                     }
                 
             }
-            .padding([.leading])
             
             // Evil Function
             /// Banner Blocking ans
@@ -140,7 +139,6 @@ struct CalDisplay: View {
                 }
             }
         }
-        .padding([.leading])
     }
 }
 

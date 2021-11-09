@@ -19,7 +19,7 @@ struct LearnMoreRemoveAd: View {
             }
             .padding()
             Divider()
-            Text("To get the code Share this app on instagram or twitter")
+            Text("To get the code to remove Ads \nShare this app on instagram or twitter")
                 .font(.title2)
                 .padding()
             Text("And tag @allaboutshivoy")

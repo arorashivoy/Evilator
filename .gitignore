@@ -7,3 +7,6 @@ Evilator/Admob/AdIds.swift
 
 #APNs authentication key
 EvilatorAPNsAuthKey.p8
+
+#Firebase private key
+evilator-firebase-adminsdk.json
