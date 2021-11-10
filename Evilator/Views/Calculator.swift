@@ -41,6 +41,8 @@ struct Calculator: View {
                 #endif
             }
             
+            Spacer()
+            
             // Display
             CalDisplay(equation: $equation, showNumber: $showNumber, numLimit: $numLimit, flippedAns: $flippedAns, bannerBlock: $bannerBlock)
             

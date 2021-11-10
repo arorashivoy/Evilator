@@ -67,6 +67,10 @@ struct EvilFunctions {
         else if 31...35 ~= random {
             bannerBlock = true
         }
+        // Send notifi "U dumb bro"
+        else if 1...100 ~= random {
+            AppNotification().scheduleEvil()
+        }
         
         // Calculate normally
         else {

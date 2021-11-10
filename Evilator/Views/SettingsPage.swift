@@ -78,6 +78,7 @@ struct SettingsPage: View {
                     Text("Remove Banner Ads")
                 }
                 
+                // Personal Message
                 Section{
                     Toggle("Get notified by Developer Shivoy Arora", isOn: $personalNoti)
                         .onChange(of: personalNoti) { newValue in
@@ -96,6 +97,31 @@ struct SettingsPage: View {
                     ViewOnGithub(bgColor: .white)
                 }header: {
                     Text("Github")
+                }
+                
+                // Social follow
+                Section{
+                    
+                    HStack{
+                        // Instagram
+                        Link(destination: URL(string: "https://www.instagram.com/allaboutshivoy")!) {
+                            Image("Instagram")
+                                .resizable()
+                                .frame(width: 50, height: 50, alignment: .leading)
+                                .padding([.trailing])
+                        }
+                        
+                        // Twitter
+                        Link(destination: URL(string: "https://twitter.com/allaboutshivoy")!) {
+                            Image("Twitter")
+                                .resizable()
+                                .frame(width: 50, height: 50, alignment: .leading)
+                            //                            .padding([.leading, .trailing])
+                        }
+                    }
+                    
+                }header: {
+                    Text("Follow me on Social")
                 }
                 
             }

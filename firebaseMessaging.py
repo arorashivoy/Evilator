@@ -1,7 +1,7 @@
 # Shivoy Arora
 # ~/Programs/Swift/Evilator/firebaseMessaging.py
 #
-# For sendding cloud messages via firebase
+# For sending cloud messages via firebase
 
 import firebase_admin
 from firebase_admin import messaging, credentials

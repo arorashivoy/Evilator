@@ -43,4 +43,22 @@ class AppNotification {
         /// add our notification request
         UNUserNotificationCenter.current().add(request)
     }
+    
+    
+    /// send "U dumb bro" notification
+    func scheduleEvil() -> Void {
+        let content = UNMutableNotificationContent()
+        content.title = "U dumb bro"
+        content.categoryIdentifier = "dumb noti"
+        content.sound = UNNotificationSound.default
+        
+        /// when to show the notification
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        
+        /// requesting the notification
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        /// add our notification request
+        UNUserNotificationCenter.current().add(request)
+    }
 }
