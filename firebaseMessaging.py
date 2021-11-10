@@ -1,21 +1,26 @@
 # Shivoy Arora
-# ~/Programs/test.py
+# ~/Programs/Swift/Evilator/firebaseMessaging.py
+#
+# For sendding cloud messages via firebase
 
 import firebase_admin
 from firebase_admin import messaging, credentials
+
+Topics = [
+    "pushNoti",
+    "personalNoti"
+]
 
 def setupEvilator():
     cred = credentials.Certificate("./evilator-firebase-adminsdk.json")
     firebase_admin.initialize_app(cred)
 
-def sendToTopic():
-    topic = "pushNoti"
-
+def sendToTopic(topic, title, body):
     message = messaging.Message(
         topic = topic,
         notification = messaging.Notification(
-            title = "Fuck you",
-            body = "you suck"
+            title = title,
+            body = body
         ),
         apns= messaging.APNSConfig(
             payload=messaging.APNSPayload(
@@ -32,4 +37,14 @@ def sendToTopic():
 
 if __name__ == "__main__":
     setupEvilator()
-    sendToTopic()
+
+    print("Select Topic: ")
+    for i in range(0,Topics):
+        print(i+1,":",Topics[i])
+
+    topicIndex = int(input("Enter the topic index: "))
+    topic = Topics[topicIndex - 1]
+    title = input("Enter title: ")
+    body = input("Enter body: ")
+
+    sendToTopic(topic, title, body)
