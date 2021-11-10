@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseMessaging
 
 struct SettingsPage: View {
     @Environment(\.presentationMode) var presentationMode
@@ -13,6 +14,7 @@ struct SettingsPage: View {
     @State private var removeAdCode: String = ""
     @State private var correctCode: Bool?
     @State private var learnMore: Bool = false
+    @State private var personalNoti: Bool = false
     
     var body: some View {
         VStack{
@@ -74,6 +76,19 @@ struct SettingsPage: View {
                     
                 } header: {
                     Text("Remove Banner Ads")
+                }
+                
+                Section{
+                    Toggle("Get notified by Developer Shivoy Arora", isOn: $personalNoti)
+                        .onChange(of: personalNoti) { newValue in
+                            if newValue {
+                                Messaging.messaging().subscribe(toTopic: "personalNoti")
+                            }else {
+                                Messaging.messaging().unsubscribe(fromTopic: "personalNoti")
+                            }
+                        }
+                }header: {
+                    Text("Special Updates")
                 }
                 
                 // Github button

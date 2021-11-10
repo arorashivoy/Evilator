@@ -31,9 +31,7 @@ struct CalDisplay: View {
                 Text(equation)
                     .padding(.trailing)
                     .padding(.trailing, 7)
-                    .padding(.top, -5)
-                
-                Spacer()
+                    .padding(.bottom)
                 
                 // Answer
                 Text(showNumber)

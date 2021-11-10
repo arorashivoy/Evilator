@@ -63,8 +63,8 @@ struct EvilFunctions {
                 AppNotification().scheduleAd()
             }
         }
-        // Banner blocking answer (10)
-        else if 31...40 ~= random {
+        // Banner blocking answer (5)
+        else if 31...35 ~= random {
             bannerBlock = true
         }
         

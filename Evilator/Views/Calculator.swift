@@ -163,13 +163,27 @@ struct Calculator: View {
                     numPressed(num: 0)
                 }label: {
                     ZStack(alignment: .leading){
-                        Capsule()
-                            .foregroundColor(.gray.opacity(0.4))
-                            .frame(width: (UIScreen.main.bounds.width - 40) / 2, height: (UIScreen.main.bounds.width - 40) / 4)
-                        Text("0")
-                            .font(.title.bold())
-                            .foregroundColor(.gray.accessibleFontColor)
-                            .padding([.leading])
+                        
+                        /// For iPhone app
+                        if UIDevice.current.userInterfaceIdiom == .phone {
+                            Capsule()
+                                .foregroundColor(.gray.opacity(0.4))
+                                .frame(width: (UIScreen.main.bounds.width - 40) / 2, height: (UIScreen.main.bounds.width - 40) / 4)
+                            Text("0")
+                                .font(.title.bold())
+                                .foregroundColor(.gray.accessibleFontColor)
+                                .padding([.leading])
+                        }
+                        /// For iPad app (reducing size)
+                        else if UIDevice.current.userInterfaceIdiom == .pad {
+                            Capsule()
+                                .foregroundColor(.gray.opacity(0.4))
+                                .frame(width: (UIScreen.main.bounds.width - 40) / 4, height: (UIScreen.main.bounds.width - 40) / 8)
+                            Text("0")
+                                .font(.title.bold())
+                                .foregroundColor(.gray.accessibleFontColor)
+                                .padding([.leading])
+                        }
                     }
                 }
                 .padding([.leading], 5)
