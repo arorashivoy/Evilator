@@ -116,7 +116,6 @@ struct SettingsPage: View {
                             Image("Twitter")
                                 .resizable()
                                 .frame(width: 50, height: 50, alignment: .leading)
-                            //                            .padding([.leading, .trailing])
                         }
                     }
                     

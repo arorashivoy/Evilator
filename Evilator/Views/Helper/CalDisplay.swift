@@ -34,41 +34,33 @@ struct CalDisplay: View {
                     .padding(.bottom)
                 
                 // Answer
-                Text(showNumber)
-                    .font(.system(size: 90))
-                    .minimumScaleFactor(0.4)
-                    .padding([.trailing, .leading])
-                /// Rotating for evil func
-                    .rotationEffect(flippedAns ? Angle(degrees: 180) : Angle(degrees: 0))
-                /// vibrations when number reaches the limit of 11
-                    .offset(x: xOffset, y: 0)
-                    .onChange(of: numLimit) { _ in
-                        if numLimit {
-                            withAnimation(.spring()){
-                                xOffset = -20
-                            }
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
-                                withAnimation(.spring()){
-                                    xOffset = 20
-                                }
-                            }
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.20) {
-                                withAnimation(.spring()){
-                                    xOffset = -20
-                                }
-                            }
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                                withAnimation(.spring()){
-                                    xOffset = 0
-                                }
-                            }
-                            
-                            numLimit = false
-                        }
-                    }
+                //
+                // For iPhone
+                if UIDevice.current.userInterfaceIdiom == .phone {
+                    Text(showNumber)
+                        .font(.system(size: 90))
+                        .minimumScaleFactor(0.4)
+                        .padding([.trailing, .leading])
+                    /// Rotating for evil func
+                        .rotationEffect(flippedAns ? Angle(degrees: 180) : Angle(degrees: 0))
+                    /// vibrations when number reaches the limit of 11
+                        .offset(x: xOffset, y: 0)
+                        .onChange(of: numLimit, perform: vibrate)
+                }
+                // For iPad
+                else if UIDevice.current.userInterfaceIdiom == .pad {
+                    Text(showNumber)
+                        .font(.system(size: 90))
+                        .frame(maxWidth: (UIScreen.main.bounds.width - 40) / 2, maxHeight: 90, alignment: .trailing)
+                        .minimumScaleFactor(0.4)
+                        .padding([.trailing, .leading])
+                    /// Rotating for evil func
+                        .rotationEffect(flippedAns ? Angle(degrees: 180) : Angle(degrees: 0))
+                    /// vibrations when number reaches the limit of 11
+                        .offset(x: xOffset, y: 0)
+                        .onChange(of: numLimit, perform: vibrate)
+                }
+                
                 
             }
             
@@ -137,6 +129,32 @@ struct CalDisplay: View {
                 }
             }
         }
+    }
+    
+    func vibrate(of num: Bool) {
+        withAnimation(.spring()){
+            xOffset = -20
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
+            withAnimation(.spring()){
+                xOffset = 20
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.20) {
+            withAnimation(.spring()){
+                xOffset = -20
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            withAnimation(.spring()){
+                xOffset = 0
+            }
+        }
+        
+        numLimit = false
     }
 }
 
