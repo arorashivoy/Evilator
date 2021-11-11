@@ -39,7 +39,7 @@ if __name__ == "__main__":
     setupEvilator()
 
     print("Select Topic: ")
-    for i in range(0,Topics):
+    for i in range(0,len(Topics)):
         print(i+1,":",Topics[i])
 
     topicIndex = int(input("Enter the topic index: "))

@@ -37,10 +37,10 @@
 		832BD33527345F3100D81DE0 /* FullScreenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenModifier.swift; sourceTree = "<group>"; };
 		832BD33B2734834100D81DE0 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		835566CA27340897009666B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		838AC39D273D99D3003BA8A3 /* EvilatorRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EvilatorRelease.entitlements; sourceTree = "<group>"; };
+		838AC39E273D99DC003BA8A3 /* Evilator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Evilator.entitlements; sourceTree = "<group>"; };
 		83B5D94C273800D500B4D4B8 /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 		83B5D9502738292500B4D4B8 /* AdIds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdIds.swift; sourceTree = "<group>"; };
-		83B5D9522739379A00B4D4B8 /* Evilator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Evilator.entitlements; sourceTree = "<group>"; };
-		83B5D953273937B000B4D4B8 /* EvilatorRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EvilatorRelease.entitlements; sourceTree = "<group>"; };
 		83B5D9542739453C00B4D4B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83B872852732CB64008A8FF9 /* CalDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalDisplay.swift; sourceTree = "<group>"; };
 		83D1D71827396CB700017BF1 /* LearnMoreRemoveAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMoreRemoveAd.swift; sourceTree = "<group>"; };
@@ -143,8 +143,8 @@
 		83D5BA1227301743009F4C07 /* Evilator */ = {
 			isa = PBXGroup;
 			children = (
-				83B5D953273937B000B4D4B8 /* EvilatorRelease.entitlements */,
-				83B5D9522739379A00B4D4B8 /* Evilator.entitlements */,
+				838AC39D273D99D3003BA8A3 /* EvilatorRelease.entitlements */,
+				838AC39E273D99DC003BA8A3 /* Evilator.entitlements */,
 				83D5BA1327301743009F4C07 /* EvilatorApp.swift */,
 				832BD32A2734117000D81DE0 /* AppDelegate.swift */,
 				832BD32F27342F4B00D81DE0 /* Views */,
@@ -435,7 +435,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Evilator/Evilator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Evilator/Preview Content\"";
 				DEVELOPMENT_TEAM = 62W399JN7W;
 				ENABLE_PREVIEWS = YES;
@@ -470,7 +470,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Evilator/EvilatorRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Evilator/Preview Content\"";
 				DEVELOPMENT_TEAM = 62W399JN7W;
 				ENABLE_PREVIEWS = YES;
