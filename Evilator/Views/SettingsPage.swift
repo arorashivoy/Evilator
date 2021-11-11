@@ -11,10 +11,10 @@ import FirebaseMessaging
 struct SettingsPage: View {
     @Environment(\.presentationMode) var presentationMode
     @AppStorage("removeAd") var removeAd: Bool = false
+    @AppStorage("personalNoti") var personalNoti: Bool = false
     @State private var removeAdCode: String = ""
     @State private var correctCode: Bool?
     @State private var learnMore: Bool = false
-    @State private var personalNoti: Bool = false
     
     var body: some View {
         VStack{
