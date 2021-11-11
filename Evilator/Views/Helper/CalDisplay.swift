@@ -51,11 +51,11 @@ struct CalDisplay: View {
                 else if UIDevice.current.userInterfaceIdiom == .pad {
                     Text(showNumber)
                         .font(.system(size: 90))
+                    /// Rotating for evil func
+                        .rotationEffect(flippedAns ? Angle(degrees: 180) : Angle(degrees: 0))
                         .frame(maxWidth: (UIScreen.main.bounds.width - 40) / 2, maxHeight: 90, alignment: .trailing)
                         .minimumScaleFactor(0.4)
                         .padding([.trailing, .leading])
-                    /// Rotating for evil func
-                        .rotationEffect(flippedAns ? Angle(degrees: 180) : Angle(degrees: 0))
                     /// vibrations when number reaches the limit of 11
                         .offset(x: xOffset, y: 0)
                         .onChange(of: numLimit, perform: vibrate)
