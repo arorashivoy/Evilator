@@ -53,7 +53,7 @@ class AppNotification {
         content.sound = UNNotificationSound.default
         
         /// when to show the notification
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
         
         /// requesting the notification
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)

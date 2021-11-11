@@ -47,7 +47,7 @@ struct EvilFunctions {
             flippedAns = true
         }
         // rickroll (10) and equal is pressed
-        if 16...25 ~= random && currOps == .equal {
+        else if 16...25 ~= random && currOps == .equal {
             openURL(URL(string: "https://www.youtube.com/watch?v=dQw4w9WgXcQ")!)
         }
         // Only type 69 (2) and equal is pressed
