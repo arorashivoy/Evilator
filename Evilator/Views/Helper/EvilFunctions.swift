@@ -102,5 +102,9 @@ struct EvilFunctions {
         else if showNumber == "420" {
             openURL(URL(string: "https://www.youtube.com/watch?v=Q-NrU-Y0LbE")!)
         }
+        // When 69 is typed and (20)
+        else if showNumber == "69" && 1...20 ~= random {
+            openURL(URL(string: "https://i.imgur.com/isueObC.jpg")!)
+        }
     }
 }

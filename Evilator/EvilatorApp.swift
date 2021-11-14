@@ -6,15 +6,30 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
+import AppTrackingTransparency
+import AdSupport
 
 @main
 struct EvilatorApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @Environment(\.scenePhase) private var scenePhase
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .preferredColorScheme(.dark)
+                .onChange(of: scenePhase) { newValue in
+                    if newValue == .active {
+                        // Requesting app tracking
+                        // When app is in active state
+                         ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in
+                             // Google Admod
+                             /// Loading ads after tracking is authorised
+                             GADMobileAds.sharedInstance().start(completionHandler: nil)
+                         })
+                    }
+                }
         }
     }
 }

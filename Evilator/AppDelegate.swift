@@ -7,9 +7,6 @@
 
 import Foundation
 import SwiftUI
-import GoogleMobileAds
-import AppTrackingTransparency
-import AdSupport
 import Firebase
 
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -27,14 +24,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         // setting up remote notification
         UIApplication.shared.registerForRemoteNotifications()
-        
-        // Requesting app tracking
-        ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in
-            
-        })
-        
-        // Google Admod
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         return true
     }

@@ -18,6 +18,7 @@ class InterstitialAd: NSObject {
     
     func loadAd(withAdUnitId id: String) {
         let req = GADRequest()
+        
         GADInterstitialAd.load(withAdUnitID: id, request: req) { interstitialAd, err in
             if let err = err {
                 print("Failed to load ad with error:\n \(err)")

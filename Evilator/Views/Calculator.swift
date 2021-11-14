@@ -58,13 +58,13 @@ struct Calculator: View {
                     flippedAns = false
                     
                 }
-                .buttonStyle(SetButton(bgColor: .gray))
+                .buttonStyle(SetButton(bgColor: .orange))
                 
                 // Ad Button
                 Button("AD"){
                     showInterstitialAd.toggle()
                 }
-                .buttonStyle(SetButton(bgColor: .gray))
+                .buttonStyle(SetButton(bgColor: .orange))
                 
                 // Settings button
                 Button{
@@ -72,7 +72,7 @@ struct Calculator: View {
                 }label: {
                     Image(systemName: "gearshape.fill")
                 }
-                .buttonStyle(SetButton(bgColor: .gray))
+                .buttonStyle(SetButton(bgColor: .orange))
                 .sheet(isPresented: $showSettings) {
                     SettingsPage()
                         .preferredColorScheme(.dark)
@@ -168,9 +168,15 @@ struct Calculator: View {
                         
                         /// For iPhone app
                         if UIDevice.current.userInterfaceIdiom == .phone {
-                            Capsule()
+                            RoundedRectangle(cornerRadius: 20)
                                 .foregroundColor(.gray.opacity(0.4))
-                                .frame(width: (UIScreen.main.bounds.width - 40) / 2, height: (UIScreen.main.bounds.width - 40) / 4)
+                                .frame(width: (UIScreen.main.bounds.width - 30) / 2, height: (UIScreen.main.bounds.width - 40) / 4)
+                            
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke()
+                                .frame(width: (UIScreen.main.bounds.width - 30) / 2, height: (UIScreen.main.bounds.width - 40) / 4)
+                                .foregroundColor(.white)
+                            
                             Text("0")
                                 .font(.title.bold())
                                 .foregroundColor(.gray.accessibleFontColor)
@@ -178,9 +184,15 @@ struct Calculator: View {
                         }
                         /// For iPad app (reducing size)
                         else if UIDevice.current.userInterfaceIdiom == .pad {
-                            Capsule()
+                            RoundedRectangle(cornerRadius: 20)
                                 .foregroundColor(.gray.opacity(0.4))
-                                .frame(width: (UIScreen.main.bounds.width - 40) / 4, height: (UIScreen.main.bounds.width - 40) / 8)
+                                .frame(width: (UIScreen.main.bounds.width - 30) / 4, height: (UIScreen.main.bounds.width - 40) / 8)
+                            
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke()
+                                .frame(width: (UIScreen.main.bounds.width - 30) / 4, height: (UIScreen.main.bounds.width - 40) / 8)
+                                .foregroundColor(.white)
+                            
                             Text("0")
                                 .font(.title.bold())
                                 .foregroundColor(.gray.accessibleFontColor)

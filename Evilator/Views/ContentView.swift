@@ -23,18 +23,28 @@ struct SetButton: ButtonStyle {
         ZStack{
             /// For iPhone app
             if UIDevice.current.userInterfaceIdiom == .phone {
-                Circle()
+                RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(bgColor)
                     .frame(width: (UIScreen.main.bounds.width - 40) / 4, height: (UIScreen.main.bounds.width - 40) / 4)
+                
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke()
+                    .frame(width: (UIScreen.main.bounds.width - 40) / 4, height: (UIScreen.main.bounds.width - 40) / 4)
+                
                 configuration.label
                     .font(.title.bold())
                     .foregroundColor(bgColor.accessibleFontColor)
             }
             /// For iPad app (reducing size)
             else if UIDevice.current.userInterfaceIdiom == .pad {
-                Circle()
+                RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(bgColor)
                     .frame(width: (UIScreen.main.bounds.width - 40) / 8, height: (UIScreen.main.bounds.width - 40) / 8)
+                
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke()
+                    .frame(width: (UIScreen.main.bounds.width - 40) / 8, height: (UIScreen.main.bounds.width - 40) / 8)
+                
                 configuration.label
                     .font(.title.bold())
                     .foregroundColor(bgColor.accessibleFontColor)
@@ -51,21 +61,31 @@ struct OpsButton: ButtonStyle {
         ZStack{
             /// For iPhone app
             if UIDevice.current.userInterfaceIdiom == .phone {
-                Circle()
-                    .foregroundColor(wasPressed ? .white : .orange)
+                RoundedRectangle(cornerRadius: 20)
+                    .foregroundColor(wasPressed ? .white : .red)
                     .frame(width: (UIScreen.main.bounds.width - 40) / 4, height: (UIScreen.main.bounds.width - 40) / 4)
+                
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke()
+                    .frame(width: (UIScreen.main.bounds.width - 40) / 4, height: (UIScreen.main.bounds.width - 40) / 4)
+                
                 configuration.label
                     .font(.title.bold())
-                    .foregroundColor(wasPressed ? .orange : .white)
+                    .foregroundColor(wasPressed ? .red : .white)
             }
             /// For iPad app (reducing size)
             else if UIDevice.current.userInterfaceIdiom == .pad {
-                Circle()
-                    .foregroundColor(wasPressed ? .white : .orange)
+                RoundedRectangle(cornerRadius: 20)
+                    .foregroundColor(wasPressed ? .white : .red)
                     .frame(width: (UIScreen.main.bounds.width - 40) / 8, height: (UIScreen.main.bounds.width - 40) / 8)
+                
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke()
+                    .frame(width: (UIScreen.main.bounds.width - 40) / 8, height: (UIScreen.main.bounds.width - 40) / 8)
+                
                 configuration.label
                     .font(.title.bold())
-                    .foregroundColor(wasPressed ? .orange : .white)
+                    .foregroundColor(wasPressed ? .red : .white)
             }
         }
     }
