@@ -17,6 +17,7 @@ struct Calculator: View {
     @State private var showNumber: String = "0"
     @State private var equation: String = ""
     @State private var decimal: Decimal = 0
+    @State private var lastPressedType: LastPressedType = .num
     
     @State private var showInterstitialAd: Bool = false
     @State private var showSettings: Bool = false
@@ -34,11 +35,15 @@ struct Calculator: View {
             if !removeAd {
                 #if DEBUG
                 SwiftUIBannerAD(adUnitId: AdIds.testBanner.rawValue)
-                    .padding(.bottom)
                 #else
                 SwiftUIBannerAD(adUnitId: AdIds.Banner.rawValue)
-                    .padding(.bottom)
                 #endif
+            }
+            /// To shift the calculator to the left side when ads are disabled
+            else if UIDevice.current.userInterfaceIdiom == .pad {
+                HStack {
+                    Spacer()
+                }
             }
             
             Spacer()
@@ -56,6 +61,7 @@ struct Calculator: View {
                     decimal = 0
                     ops = .none
                     flippedAns = false
+                    lastPressedType = .num
                     
                 }
                 .buttonStyle(SetButton(bgColor: .orange))
@@ -64,7 +70,7 @@ struct Calculator: View {
                 Button("AD"){
                     showInterstitialAd.toggle()
                 }
-                .buttonStyle(SetButton(bgColor: .orange))
+                .buttonStyle(SetButton(bgColor: .red))
                 
                 // Settings button
                 Button{
@@ -72,7 +78,7 @@ struct Calculator: View {
                 }label: {
                     Image(systemName: "gearshape.fill")
                 }
-                .buttonStyle(SetButton(bgColor: .orange))
+                .buttonStyle(SetButton(bgColor: .red))
                 .sheet(isPresented: $showSettings) {
                     SettingsPage()
                         .preferredColorScheme(.dark)
@@ -161,57 +167,52 @@ struct Calculator: View {
             // Row 5
             HStack{
                 // 0 Button
-                Button{
+                Button("0"){
                     numPressed(num: 0)
-                }label: {
-                    ZStack(alignment: .leading){
-                        
-                        /// For iPhone app
-                        if UIDevice.current.userInterfaceIdiom == .phone {
-                            RoundedRectangle(cornerRadius: 20)
-                                .foregroundColor(.gray.opacity(0.4))
-                                .frame(width: (UIScreen.main.bounds.width - 30) / 2, height: (UIScreen.main.bounds.width - 40) / 4)
-                            
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke()
-                                .frame(width: (UIScreen.main.bounds.width - 30) / 2, height: (UIScreen.main.bounds.width - 40) / 4)
-                                .foregroundColor(.white)
-                            
-                            Text("0")
-                                .font(.title.bold())
-                                .foregroundColor(.gray.accessibleFontColor)
-                                .padding([.leading])
-                        }
-                        /// For iPad app (reducing size)
-                        else if UIDevice.current.userInterfaceIdiom == .pad {
-                            RoundedRectangle(cornerRadius: 20)
-                                .foregroundColor(.gray.opacity(0.4))
-                                .frame(width: (UIScreen.main.bounds.width - 30) / 4, height: (UIScreen.main.bounds.width - 40) / 8)
-                            
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke()
-                                .frame(width: (UIScreen.main.bounds.width - 30) / 4, height: (UIScreen.main.bounds.width - 40) / 8)
-                                .foregroundColor(.white)
-                            
-                            Text("0")
-                                .font(.title.bold())
-                                .foregroundColor(.gray.accessibleFontColor)
-                                .padding([.leading])
-                        }
-                    }
                 }
-                .padding([.leading], 5)
+                .buttonStyle(SetButton(bgColor: .gray.opacity(0.4)))
                 
                 // . button
                 Button("."){
-                    if decimal == 0{
-                        if number != 0 {
+                    if lastPressedType == .num {
+                        if decimal == 0{
                             showNumber = showNumber + "."
-                        }else {
-                            showNumber = "0."
+                            
+                            decimal = 0.1
                         }
+                    }else {
+                        showNumber = "0."
                         decimal = 0.1
                     }
+                    
+                    lastPressedType = .num
+                }
+                .buttonStyle(SetButton(bgColor: .gray.opacity(0.4)))
+                
+                // Delete button
+                Button{
+                    
+                    if lastPressedType == .num {
+                        /// Changing showNumber
+                        if showNumber.count > 1 {
+                            let lastIndex = showNumber.index(showNumber.startIndex, offsetBy: showNumber.count - 1)
+                            showNumber = String(showNumber[..<lastIndex])
+                        }else {
+                            showNumber = "0"
+                        }
+                        /// Changing number
+                        number = Decimal(string: showNumber) ?? 0
+                        if decimal == 0.1 {
+                            decimal = 0
+                        }else {
+                            decimal *= 10
+                        }
+                    }else {
+                        showNumber = "0"
+                    }
+                    
+                }label: {
+                    Image(systemName: "delete.left")
                 }
                 .buttonStyle(SetButton(bgColor: .gray.opacity(0.4)))
                 
@@ -232,6 +233,7 @@ struct Calculator: View {
                 }
             }
         }
+        .padding([.leading, .trailing, .bottom])
         .padding([.leading, .trailing])
         
         // Presention interstitial ad
@@ -250,6 +252,9 @@ struct Calculator: View {
         /// Unflipping the showNumber when a new number is pressed
         flippedAns = false
         
+        /// Setting last pressed type
+        lastPressedType = .num
+        
         if (showNumber.count < 11 || number.isZero) {
             if decimal != 0 {
                 number += num * decimal
@@ -267,7 +272,7 @@ struct Calculator: View {
             
             // Evil functions
             DispatchQueue.main.async {
-                EvilFunctions(ops: .constant(.none), flippedAns: .constant(false), showNumber: $showNumber, showInterstitialAd: .constant(false), only69: $only69, bannerBlock: .constant(false), currOps: .none).evilNum()
+                EvilFunctions(ops: .constant(.none), flippedAns: .constant(false), showNumber: $showNumber, showInterstitialAd: .constant(false), only69: $only69, bannerBlock: .constant(false), currOps: .none, equation: self.equation).evilNum()
             }
             
         }else {
@@ -286,6 +291,9 @@ struct Calculator: View {
     func opsPressed(ops: Ops) {
         
         only69 = false
+        
+        /// Setting last pressed type
+        lastPressedType = .ops
         
         switch self.ops {
         case .add:
@@ -319,8 +327,14 @@ struct Calculator: View {
         
         // Evil Functions
         DispatchQueue.main.async {
-            EvilFunctions(ops: $ops, flippedAns: $flippedAns, showNumber: $showNumber, showInterstitialAd: $showInterstitialAd, only69: $only69, bannerBlock: $bannerBlock, currOps: ops).evilOps()
+            EvilFunctions(ops: $ops, flippedAns: $flippedAns, showNumber: $showNumber, showInterstitialAd: $showInterstitialAd, only69: $only69, bannerBlock: $bannerBlock, currOps: ops, equation: self.equation).evilOps()
         }
+    }
+    
+    /// enum of the last pressed nutton type
+    enum LastPressedType {
+        case num
+        case ops
     }
 }
 

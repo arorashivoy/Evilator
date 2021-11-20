@@ -19,6 +19,7 @@ struct EvilFunctions {
     @Binding var bannerBlock: Bool
     
     var currOps: Ops
+    var equation: String
     
     let random: Int = .random(in: 1...100)
     
@@ -37,6 +38,12 @@ struct EvilFunctions {
         else if 66...71 ~= Int(showNumber) ?? 0 && 1...30 ~= random {
             showNumber = "69"
         }
+        // 1+1=3 (20)
+        else if equation == "1 + 1" && 1...20 ~= random {
+            showNumber = "3"
+            AppNotification().scheduleCondom()
+        }
+        
         // Changing ops (5)
         else if 1...5 ~= random {
             let ranOps: Ops = .allCases.randomElement() ?? ops
@@ -69,7 +76,7 @@ struct EvilFunctions {
         }
         // Send notifi "U dumb bro" (5)
         else if 36...40 ~= random {
-            AppNotification().scheduleEvil()
+            AppNotification().scheduleDumb()
         }
         
         // Calculate normally
@@ -95,14 +102,14 @@ struct EvilFunctions {
             }
         }
         // when boobs is typed
-        else if showNumber == "80085" || showNumber == "58008" {
+        else if showNumber == "80085" || showNumber == "58008" || showNumber == "5318008"{
             openURL(URL(string: "https://www.google.com/search?q=round+firm+boobs&tbm=isch&ved=2ahUKEwjxifm07Yb0AhURmhoKHechCoMQ2-cCegQIABAA&oq=round+firm+boobs&gs_lcp=CgNpbWcQA1CKBVjXIGCKImgAcAB4AIABN4gBnAGSAQEzmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=XxeIYbHeA5G0aufDqJgI&bih=821&biw=1440")!)
         }
-        // when 420 is typed
-        else if showNumber == "420" {
+        // smoke weed everyday (20) and 420 is typed
+        else if showNumber == "420" && 1...20 ~= random {
             openURL(URL(string: "https://www.youtube.com/watch?v=Q-NrU-Y0LbE")!)
         }
-        // When 69 is typed and (20)
+        // Go to horny jail (20) and 69 is typed
         else if showNumber == "69" && 1...20 ~= random {
             openURL(URL(string: "https://i.imgur.com/isueObC.jpg")!)
         }

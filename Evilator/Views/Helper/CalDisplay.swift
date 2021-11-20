@@ -31,7 +31,6 @@ struct CalDisplay: View {
                 Text(equation)
                     .padding(.trailing)
                     .padding(.trailing, 7)
-                    .padding(.bottom)
                 
                 // Answer
                 //
@@ -39,6 +38,7 @@ struct CalDisplay: View {
                 if UIDevice.current.userInterfaceIdiom == .phone {
                     Text(showNumber)
                         .font(.system(size: 90))
+                        .frame(maxHeight: 120)
                         .minimumScaleFactor(0.4)
                         .padding([.trailing, .leading])
                     /// Rotating for evil func
@@ -53,7 +53,7 @@ struct CalDisplay: View {
                         .font(.system(size: 90))
                     /// Rotating for evil func
                         .rotationEffect(flippedAns ? Angle(degrees: 180) : Angle(degrees: 0))
-                        .frame(maxWidth: (UIScreen.main.bounds.width - 40) / 2, maxHeight: 90, alignment: .trailing)
+                        .frame(maxWidth: (UIScreen.main.bounds.width - 40) / 2, maxHeight: 150, alignment: .trailing)
                         .minimumScaleFactor(0.4)
                         .padding([.trailing, .leading])
                     /// vibrations when number reaches the limit of 11

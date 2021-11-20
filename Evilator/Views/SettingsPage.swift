@@ -52,6 +52,8 @@ struct SettingsPage: View {
                         if removeAdCodes.contains(removeAdCode) {
                             removeAd = true
                             correctCode = true
+                        }else if removeAdCode == "Reset"{
+                            removeAd = false
                         }else {
                             correctCode = false
                         }

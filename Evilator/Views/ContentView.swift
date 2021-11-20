@@ -23,13 +23,9 @@ struct SetButton: ButtonStyle {
         ZStack{
             /// For iPhone app
             if UIDevice.current.userInterfaceIdiom == .phone {
-                RoundedRectangle(cornerRadius: 20)
+                Capsule()
                     .foregroundColor(bgColor)
-                    .frame(width: (UIScreen.main.bounds.width - 40) / 4, height: (UIScreen.main.bounds.width - 40) / 4)
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke()
-                    .frame(width: (UIScreen.main.bounds.width - 40) / 4, height: (UIScreen.main.bounds.width - 40) / 4)
+                    .frame(width: (UIScreen.main.bounds.width - 20) / 4, height: (UIScreen.main.bounds.width - 90) / 4)
                 
                 configuration.label
                     .font(.title.bold())
@@ -37,13 +33,9 @@ struct SetButton: ButtonStyle {
             }
             /// For iPad app (reducing size)
             else if UIDevice.current.userInterfaceIdiom == .pad {
-                RoundedRectangle(cornerRadius: 20)
+                Capsule()
                     .foregroundColor(bgColor)
-                    .frame(width: (UIScreen.main.bounds.width - 40) / 8, height: (UIScreen.main.bounds.width - 40) / 8)
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke()
-                    .frame(width: (UIScreen.main.bounds.width - 40) / 8, height: (UIScreen.main.bounds.width - 40) / 8)
+                    .frame(width: (UIScreen.main.bounds.width - 40) / 8, height: (UIScreen.main.bounds.width - 190) / 8)
                 
                 configuration.label
                     .font(.title.bold())
@@ -61,13 +53,9 @@ struct OpsButton: ButtonStyle {
         ZStack{
             /// For iPhone app
             if UIDevice.current.userInterfaceIdiom == .phone {
-                RoundedRectangle(cornerRadius: 20)
+                Capsule()
                     .foregroundColor(wasPressed ? .white : .red)
-                    .frame(width: (UIScreen.main.bounds.width - 40) / 4, height: (UIScreen.main.bounds.width - 40) / 4)
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke()
-                    .frame(width: (UIScreen.main.bounds.width - 40) / 4, height: (UIScreen.main.bounds.width - 40) / 4)
+                    .frame(width: (UIScreen.main.bounds.width - 40) / 4, height: (UIScreen.main.bounds.width - 90) / 4)
                 
                 configuration.label
                     .font(.title.bold())
@@ -75,13 +63,9 @@ struct OpsButton: ButtonStyle {
             }
             /// For iPad app (reducing size)
             else if UIDevice.current.userInterfaceIdiom == .pad {
-                RoundedRectangle(cornerRadius: 20)
+                Capsule()
                     .foregroundColor(wasPressed ? .white : .red)
-                    .frame(width: (UIScreen.main.bounds.width - 40) / 8, height: (UIScreen.main.bounds.width - 40) / 8)
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke()
-                    .frame(width: (UIScreen.main.bounds.width - 40) / 8, height: (UIScreen.main.bounds.width - 40) / 8)
+                    .frame(width: (UIScreen.main.bounds.width - 40) / 8, height: (UIScreen.main.bounds.width - 190) / 8)
                 
                 configuration.label
                     .font(.title.bold())
