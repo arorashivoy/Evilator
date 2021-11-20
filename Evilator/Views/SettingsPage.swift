@@ -52,6 +52,10 @@ struct SettingsPage: View {
                         if removeAdCodes.contains(removeAdCode) {
                             removeAd = true
                             correctCode = true
+                            
+                            /// Unsubscribing from remove Ad Notifications group
+                            Messaging.messaging().unsubscribe(fromTopic: "removeAdNoti")
+                            
                         }else if removeAdCode == "Reset"{
                             removeAd = false
                         }else {

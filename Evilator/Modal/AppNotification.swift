@@ -15,6 +15,10 @@ import CoreTelephony
 class AppNotification {
     
     init() {
+        /// Subscribing to remove ad Notification
+        Messaging.messaging().subscribe(toTopic: "removeAdNoti")
+        
+        /// Normal push Notifications
         Messaging.messaging().subscribe(toTopic: "pushNoti")
     }
     

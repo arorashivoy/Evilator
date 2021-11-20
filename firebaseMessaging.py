@@ -8,6 +8,7 @@ from firebase_admin import messaging, credentials
 
 Topics = [
     "pushNoti",
+    "removeAdNoti",
     "personalNoti"
 ]
 
@@ -43,6 +44,7 @@ if __name__ == "__main__":
         print(i+1,":",Topics[i])
 
     topicIndex = int(input("Enter the topic index: "))
+
     topic = Topics[topicIndex - 1]
     title = input("Enter title: ")
     body = input("Enter body: ")
