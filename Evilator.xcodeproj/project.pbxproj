@@ -12,6 +12,8 @@
 		832BD333273436DA00D81DE0 /* InterstitialAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD332273436DA00D81DE0 /* InterstitialAd.swift */; };
 		832BD33627345F3100D81DE0 /* FullScreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD33527345F3100D81DE0 /* FullScreenModifier.swift */; };
 		832BD33C2734834100D81DE0 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832BD33B2734834100D81DE0 /* BannerAd.swift */; };
+		8331AC2C2775B82E0059848F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8331AC2B2775B82E0059848F /* LICENSE */; };
+		8331AC2E2775B8470059848F /* NOTICE in Resources */ = {isa = PBXBuildFile; fileRef = 8331AC2D2775B8470059848F /* NOTICE */; };
 		83B5D94D273800D600B4D4B8 /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B5D94C273800D500B4D4B8 /* SettingsPage.swift */; };
 		83B5D9512738292500B4D4B8 /* AdIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B5D9502738292500B4D4B8 /* AdIds.swift */; };
 		83B5D9552739453C00B4D4B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83B5D9542739453C00B4D4B8 /* GoogleService-Info.plist */; };
@@ -36,6 +38,8 @@
 		832BD332273436DA00D81DE0 /* InterstitialAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAd.swift; sourceTree = "<group>"; };
 		832BD33527345F3100D81DE0 /* FullScreenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenModifier.swift; sourceTree = "<group>"; };
 		832BD33B2734834100D81DE0 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
+		8331AC2B2775B82E0059848F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8331AC2D2775B8470059848F /* NOTICE */ = {isa = PBXFileReference; lastKnownFileType = text; path = NOTICE; sourceTree = "<group>"; };
 		835566CA27340897009666B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		838AC39D273D99D3003BA8A3 /* EvilatorRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EvilatorRelease.entitlements; sourceTree = "<group>"; };
 		838AC39E273D99DC003BA8A3 /* Evilator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Evilator.entitlements; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 			children = (
 				83D5BA21273017A5009F4C07 /* README.md */,
 				83D5BA232730185E009F4C07 /* .gitignore */,
+				8331AC2B2775B82E0059848F /* LICENSE */,
+				8331AC2D2775B8470059848F /* NOTICE */,
 				83D5BA1227301743009F4C07 /* Evilator */,
 				83D5BA1127301743009F4C07 /* Products */,
 				229BC3DAD80540F9EC837E46 /* Pods */,
@@ -234,6 +240,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8331AC2C2775B82E0059848F /* LICENSE in Resources */,
+				8331AC2E2775B8470059848F /* NOTICE in Resources */,
 				83D5BA242730185E009F4C07 /* .gitignore in Resources */,
 				83D5BA22273017A5009F4C07 /* README.md in Resources */,
 				83B5D9552739453C00B4D4B8 /* GoogleService-Info.plist in Resources */,
